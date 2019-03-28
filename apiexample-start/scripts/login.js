@@ -1,35 +1,32 @@
-// create apiService Variable
-var apiService;
-var authService;
+// Declare global variables for the API and authentication service.
+var apiService, authService;
 
-// define is a require.js function we are using it to access the sdk libraries
-define(
-    ['../cw-sdk/api/services/general/authenticationservice'],
+// Use Require.JS's define function to load needed modules from the SDK.
+define([ // First argument is an array of module locations.
+    '../cw-sdk/api/services/general/authenticationservice'
+    ],
+    // Second argument is a function that takes arguments for each module.
     function (api) {
-
-        //Create a new api service
-        //use the passed in api to call ApiService, and pass in
-        //our site's url so it knows where to call the api
+        // Define the global API service variable.
         apiService = new api.ApiService("https://training.cityworks.com/cityworks");
+        // Define the global authentication API service variable.
         authService = new api.AuthenticationService(apiService);
-    })
+    }
+);
 
-// binds to the Login button
-function login() {
+// Function to make the Authentication/Authenticate API call.
+function authenticate() {
+    // Get the username and password from the document.
+    // Declare the data object and populate it with the username and password.
+    // Make the API call and assign the response a callback function.
+}
 
-    // accesses the username and password inputs
-    let username = document.getElementById('username').value;
-    let password = document.getElementById('password').value;
-
-    // this calls the login api to get a token requires username and password
-    
-        // ".then" catches the response object which contains the token
-    
-            // make sure that http response came back correctly
-
-                // our token variable
-
-                // save the token to localStorage
-
-                // change pages
+// Callback function for the Authentication/Authenticate API call.
+function authenticateCallback(response) {
+    // Check the status of the response.
+    // If the response is good...
+        // Save the token to local storage.
+        // Push the user to the main page.
+    // If the response is bad...
+        // Inform the user of the error.
 }

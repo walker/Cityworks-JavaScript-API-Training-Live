@@ -15,6 +15,7 @@ export namespace CaseTaskResultsServiceTypes {
             ReInsertFlag?: string;
             ResultCode: string;
             ResultDesc?: string;
+            ResultDisplay?: string;
             ResultID: number;
             ResultSetID: number;
             SkipTaskFlag?: string;
@@ -36,6 +37,7 @@ export namespace CaseTaskResultsServiceTypes {
             ReInsertFlag?: string;
             ResultCode?: string;
             ResultDesc?: string;
+            ResultDisplay?: string;
             ResultID?: number;
             ResultSetID?: number;
             SkipTaskFlag?: string;

@@ -11,6 +11,18 @@ export declare namespace Enums {
         Email = 2,
         WebHook = 3,
     }
+    enum ActivityLinkActivityType {
+        Null = 0,
+        Case = 1,
+        Inspection = 2,
+        ServiceRequest = 3,
+        WorkOrder = 4,
+    }
+    enum ActivityLinkType {
+        Null = 0,
+        Parent = 1,
+        Related = 2,
+    }
     enum ApiVersionEnum {
         V20121 = 0,
         V2013 = 1,
@@ -28,6 +40,15 @@ export declare namespace Enums {
         V15_2_2 = 13,
         V15_2_3 = 14,
         V15_2_4 = 15,
+        V15_2_5 = 16,
+        V15_2_6 = 17,
+        V15_2_7 = 18,
+        V15_3 = 19,
+        V15_3_1 = 20,
+        V15_3_2 = 21,
+        V15_3_3 = 22,
+        V15_4 = 23,
+        V15_4_1 = 24,
     }
     enum ApplyLevel {
         Null = 0,
@@ -41,6 +62,22 @@ export declare namespace Enums {
         SIDEWALKRATING = 2,
         TREEDAMAGERATING = 3,
     }
+    enum AttachmentFileType {
+        ATTACHMENT = 0,
+        SIGNATURE = 1,
+    }
+    enum ChangeOutOp {
+        DETACH = 0,
+        ATTACH = 1,
+        REPLACE = 2,
+        NULL = 3,
+        READ = 4,
+    }
+    enum CodeDescUsage {
+        Null = 0,
+        Code = 1,
+        Description = 2,
+    }
     enum CommentActivityType {
         Request = 1,
         WorkOrder = 2,
@@ -52,6 +89,13 @@ export declare namespace Enums {
         Hourly = 0,
         Fixed = 1,
         PerUnit = 2,
+    }
+    enum CoreResponseStatus {
+        Ok = 0,
+        Error = 1,
+        Unauthorized = 2,
+        InvalidCredentials = 3,
+        ConnectionError = -1,
     }
     enum CostUsage {
         Actual = 0,
@@ -89,6 +133,12 @@ export declare namespace Enums {
         H = 2,
         NA = 3,
     }
+    enum EquipChangeOutType {
+        AddRelationship = 0,
+        ModifyRelationship = 1,
+        DissolveRelationship = 2,
+        Unknown = 3,
+    }
     enum EquipmentRateType {
         Hourly = 0,
         Fixed = 1,
@@ -102,6 +152,9 @@ export declare namespace Enums {
         WorkOrderLabor = 5,
         RequestLabor = 6,
         Unknown = 7,
+        SMS = 8,
+        CaTaskItem = 9,
+        WoTask = 10,
     }
     enum EventTriggerType {
         Always = 0,
@@ -125,6 +178,12 @@ export declare namespace Enums {
         Attribute = 1,
         Geometry = 2,
     }
+    enum GISServiceSecurityType {
+        NONE = 0,
+        GENERATETOKEN = 1,
+        OAUTHUSER = 2,
+        OAUTHAPP = 3,
+    }
     enum GISServiceType {
         DYNAMICMAP = 0,
         TILEDMAP = 1,
@@ -144,6 +203,7 @@ export declare namespace Enums {
         PRINTING = 15,
         ROUTING = 16,
         VECTORTILE = 17,
+        MOBILEMAPPACKAGE = 18,
     }
     enum InspQuestionType {
         Single = 0,
@@ -321,6 +381,9 @@ export declare namespace Enums {
         CustomerAccount = 25,
         InspTemplate = 26,
         ProblemLeaf = 27,
+        AssetSplitRecord = 28,
+        PavementInsp = 29,
+        TvInspection = 30,
     }
     enum SearchView {
         Grid = 0,
@@ -363,6 +426,42 @@ export declare namespace Enums {
         WorkOrderStatusChanged = 30,
         RequestStatusChanged = 31,
         InspectionStatusChanged = 32,
+        RequestCommentAdded = 33,
+        RequestCommentUpdated = 34,
+        RequestCommentDeleted = 35,
+        WorkOrderCommentAdded = 36,
+        WorkOrderCommentUpdated = 37,
+        WorkOrderCommentDeleted = 38,
+        CaCorrectionCommentAdded = 39,
+        CaCorrectionCommentUpdated = 40,
+        CaCorrectionCommentDeleted = 41,
+        CaTaskCommentAdded = 42,
+        CaTaskCommentUpdated = 43,
+        CaTaskCommentDeleted = 44,
+        CaObjectCommentAdded = 45,
+        CaObjectCommentUpdated = 46,
+        CaObjectCommentDeleted = 47,
+        CaTaskItemCompleted = 48,
+        WoTaskAdded = 50,
+        WoTaskAssignedToChanged = 51,
+        WoTaskCommentAdded = 52,
+        WoTaskCommentDeleted = 53,
+        WoTaskCommentUpdated = 54,
+        WoTaskDeleted = 55,
+        WoTaskProceedUpdated = 56,
+        WoTaskReworkUpdated = 57,
+        WoTaskStatusChanged = 58,
+    }
+    enum StandardInspTableName {
+        SDYETEST = 0,
+        SMANHOLEINSP = 1,
+        SSMOKETEST = 2,
+        STVINSPECTION = 3,
+        WFIREHYDFLOWTEST = 4,
+        EQUIPCHANGEOUT = 5,
+        WVALVDEVINSP = 6,
+        WHYDDEVINSP = 7,
+        SSTINLETINSP = 8,
     }
     enum TimeIntervalUnit {
         HOUR = 0,
@@ -379,6 +478,12 @@ export declare namespace Enums {
         FRTRASH = 5,
         TOTRASH = 6,
     }
+    enum TraverseNetworkDirection {
+        Unknown = 0,
+        Up = 1,
+        Down = 2,
+        Both = 3,
+    }
     enum TreeNodeTextType {
         C = 0,
         CD = 1,
@@ -389,6 +494,83 @@ export declare namespace Enums {
         N = 1,
         L = 2,
         Null = 3,
+    }
+    enum TvObservationCause {
+        S = 0,
+        I = 1,
+        R = 2,
+        O = 3,
+    }
+    enum TvObservationMethod {
+        STANDARD = 0,
+        CCTV = 1,
+    }
+    enum VerificationStatus {
+        Unverified = 0,
+        Pass = 1,
+        Fail = 2,
+    }
+    enum WebHookCustomPacketTemplateFlag {
+        Unknown = 0,
+        ApiUserToken = 1,
+        Comments = 2,
+        CwWkid = 3,
+        GetDate = 4,
+        QuestionAnswer = 5,
+        ServiceResourceSecurityToken = 6,
+        GisItemOid = 7,
+        GisItemGlobalId = 8,
+        CancelledByPager = 9,
+        CancelledByWorkPhone = 10,
+        ClosedByPager = 11,
+        ClosedByWorkPhone = 12,
+        CurrentUserPager = 13,
+        CurrentUserWorkPhone = 14,
+        DispatchOpenByPager = 15,
+        DispatchOpenByWorkPhone = 16,
+        DispatchToPager = 17,
+        DispatchToWorkPhone = 18,
+        InitiatedByPager = 19,
+        InitiatedByWorkPhone = 20,
+        InspectedByPager = 21,
+        InspectedByWorkPhone = 22,
+        RequestedByPager = 23,
+        RequestedByWorkPhone = 24,
+        SubmitToOpenByPager = 25,
+        SubmitToOpenByWorkPhone = 26,
+        SubmitToPager = 27,
+        SubmitToWorkPhone = 28,
+        SupervisorPager = 29,
+        SupervisorWorkPhone = 30,
+        WorkCompletedByPager = 31,
+        WorkCompletedByWorkPhone = 32,
+        CancelledByPager_Numeric = 33,
+        CancelledByWorkPhone_Numeric = 34,
+        ClosedByPager_Numeric = 35,
+        ClosedByWorkPhone_Numeric = 36,
+        CurrentUserPager_Numeric = 37,
+        CurrentUserWorkPhone_Numeric = 38,
+        DispatchOpenByPager_Numeric = 39,
+        DispatchOpenByWorkPhone_Numeric = 40,
+        DispatchToPager_Numeric = 41,
+        DispatchToWorkPhone_Numeric = 42,
+        InitiatedByPager_Numeric = 43,
+        InitiatedByWorkPhone_Numeric = 44,
+        InspectedByPager_Numeric = 45,
+        InspectedByWorkPhone_Numeric = 46,
+        RequestedByPager_Numeric = 47,
+        RequestedByWorkPhone_Numeric = 48,
+        SubmitToOpenByPager_Numeric = 49,
+        SubmitToOpenByWorkPhone_Numeric = 50,
+        SubmitToPager_Numeric = 51,
+        SubmitToWorkPhone_Numeric = 52,
+        SupervisorPager_Numeric = 53,
+        SupervisorWorkPhone_Numeric = 54,
+        WorkCompletedByPager_Numeric = 55,
+        WorkCompletedByWorkPhone_Numeric = 56,
+        BaseObjectAsJson = 57,
+        RequestWorkOrderIds = 58,
+        WorkOrderRequestIds = 59,
     }
     enum WebHookOutputType {
         JSON = 0,

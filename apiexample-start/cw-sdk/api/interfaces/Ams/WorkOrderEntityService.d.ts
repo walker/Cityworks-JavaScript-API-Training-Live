@@ -9,6 +9,7 @@ export namespace WorkOrderEntityServiceTypes {
         }
         export interface CreateSearchDefinition extends ServiceTypes.CoreRequestBase {
             Address?: string[];
+            EnableEurl?: boolean;
             EntitySid?: number[];
             EntitySidIncludeNulls?: boolean;
             EntitySidIsInList?: boolean;
@@ -65,8 +66,11 @@ export namespace WorkOrderEntityServiceTypes {
             MaxResults?: number;
             ObjectId?: number[];
             ObjectIdIsInList?: boolean;
+            SaveDefinition?: boolean;
+            SearchName?: string;
             Sequence?: number[];
             SequenceIsInList?: boolean;
+            SharedWithin?: number;
             TileNo?: string[];
             TotalCostIncludeNulls?: boolean;
             TotalCostIsMaxValueExclusive?: boolean;

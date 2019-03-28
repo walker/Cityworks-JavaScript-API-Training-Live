@@ -12,7 +12,7 @@ export declare class SearchService implements ISearchService {
     constructor(service: IApiService);
     AssetCalculationResultSaved(request: Requests.AssetCalculationResultSaved): AbortablePromise<Responses.Saved>;
     Definition(request: Requests.Definition): AbortablePromise<Responses.Definition>;
-    DefinitionNames(request: Requests.DefinitionNames): AbortablePromise<Responses.DefinitionNames>;
+    DefinitionNames(request: Requests.DefinitionNames): AbortablePromise<Responses.Saved>;
     Definitions(request: Requests.Definitions): AbortablePromise<Responses.Definitions>;
     DeleteDefinitions(request: Requests.DeleteDefinitions): AbortablePromise<Responses.DeleteDefinitions>;
     DisplayFields(request: Requests.DisplayFields): AbortablePromise<Responses.DisplayFields>;
@@ -28,6 +28,7 @@ export declare class SearchService implements ISearchService {
     SaveDefinition(request: Requests.SaveDefinition): AbortablePromise<Responses.SaveDefinition>;
     StoreTransactionSaved(request: Requests.StoreTransactionSaved): AbortablePromise<Responses.Saved>;
     Types(request: Requests.Types): AbortablePromise<Responses.Types>;
+    UpdateEurl(request: Requests.UpdateEurl): AbortablePromise<Responses.UpdateEurl>;
     WorkActivitySaved(request: Requests.WorkActivitySaved): AbortablePromise<Responses.Saved>;
     WorkOrderEntitySaved(request: Requests.WorkOrderEntitySaved): AbortablePromise<Responses.Saved>;
     WorkOrderSaved(request: Requests.WorkOrderSaved): AbortablePromise<Responses.Saved>;

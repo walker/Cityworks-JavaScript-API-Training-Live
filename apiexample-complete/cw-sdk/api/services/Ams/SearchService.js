@@ -5,7 +5,7 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     }
     Object.defineProperty(exports, "__esModule", { value: true });
     __export(api_service_1);
-    var SearchService = (function () {
+    var SearchService = /** @class */ (function () {
         function SearchService(service) {
             this._service = service;
         }
@@ -62,6 +62,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         SearchService.prototype.Types = function (request) {
             return this._service.call(request, 'Ams/Search/Types');
+        };
+        SearchService.prototype.UpdateEurl = function (request) {
+            return this._service.call(request, 'Ams/Search/UpdateEurl');
         };
         SearchService.prototype.WorkActivitySaved = function (request) {
             return this._service.call(request, 'Ams/Search/WorkActivitySaved');

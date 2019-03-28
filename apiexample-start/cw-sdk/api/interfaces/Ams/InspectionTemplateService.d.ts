@@ -57,6 +57,9 @@ export namespace InspectionTemplateServiceTypes {
             Priority?: string[];
             QAModel?: number[];
             RequireAssetOnClose?: boolean;
+            SaveDefinition?: boolean;
+            SearchName?: string;
+            SharedWithin?: number;
             SubmitToEmployeeSid?: number[];
             SubmitToEmployeeSidIsInList?: boolean;
             WorkMonth?: string[];

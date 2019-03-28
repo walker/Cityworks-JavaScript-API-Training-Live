@@ -5,7 +5,7 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     }
     Object.defineProperty(exports, "__esModule", { value: true });
     __export(api_service_1);
-    var CaseConditionService = (function () {
+    var CaseConditionService = /** @class */ (function () {
         function CaseConditionService(service) {
             this._service = service;
         }

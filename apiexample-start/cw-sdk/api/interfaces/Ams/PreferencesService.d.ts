@@ -8,8 +8,10 @@ export namespace PreferencesServiceTypes {
             PreferenceNames?: string[];
         }
         export interface User extends ServiceTypes.CoreRequestBase {
+            Categories?: string[];
             DomainId?: number;
             EmployeeSid?: number;
+            PreferenceNames?: string[];
         }
         export interface UserSave extends ServiceTypes.CoreRequestBase {
             Category?: string;

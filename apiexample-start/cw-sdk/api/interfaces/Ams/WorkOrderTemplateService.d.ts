@@ -10,6 +10,9 @@ export namespace WorkOrderTemplateServiceTypes {
             MinimumDateModified?: Date;
             WOTemplateIds?: string[];
         }
+        export interface ByProblemSids extends ServiceTypes.CoreRequestBase {
+            ProblemSids: number[];
+        }
         export interface CustomFields extends ServiceTypes.CoreRequestBase {
             WOTemplateIds: string[];
         }
@@ -85,10 +88,12 @@ export namespace WorkOrderTemplateServiceTypes {
             MaximumDateModified?: Date;
             MinimumDateModified?: Date;
             OnlyCanCreate?: boolean;
+            WOTemplateIds?: string[];
         }
     }
     export namespace Responses {
         export interface ByIds extends ServiceTypes.CoreResponseBase_<CoreTypes.WOTemplateBase[]> {}
+        export interface ByProblemSids extends ServiceTypes.CoreResponseBase_<CoreTypes.ProblemWOTemplateBase[]> {}
         export interface CustomFields extends ServiceTypes.CoreResponseBase_<{[key: string]: CoreTypes.CategoryCustField[]}> {}
         export interface Search extends ServiceTypes.CoreResponseBase_<string[]> {}
         export interface TemplateInspections extends ServiceTypes.CoreResponseBase_<CoreTypes.WOTemplateDefaultTestBase[]> {}
@@ -96,6 +101,7 @@ export namespace WorkOrderTemplateServiceTypes {
     }
     export interface IWorkOrderTemplateService {
         ByIds?: (request: Requests.ByIds) => AbortablePromise<Responses.ByIds>;
+        ByProblemSids?: (request: Requests.ByProblemSids) => AbortablePromise<Responses.ByProblemSids>;
         CustomFields?: (request: Requests.CustomFields) => AbortablePromise<Responses.CustomFields>;
         Search?: (request: Requests.Search) => AbortablePromise<Responses.Search>;
         TemplateInspections?: (request: Requests.TemplateInspections) => AbortablePromise<Responses.TemplateInspections>;

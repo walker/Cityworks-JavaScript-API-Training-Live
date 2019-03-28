@@ -5,6 +5,7 @@ export namespace MaterialCostServiceTypes {
     export namespace Requests {
         export interface AddWorkOrderCosts extends ServiceTypes.CoreRequestBase {
             AcctNum?: string;
+            CombineIssuesByMaterialSid?: boolean;
             ContractorMaterialCost?: number;
             ContractorMaterialDescription?: string;
             ContractorMaterialId?: string;

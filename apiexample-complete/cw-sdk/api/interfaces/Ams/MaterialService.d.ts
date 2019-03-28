@@ -80,7 +80,7 @@ export namespace MaterialServiceTypes {
         export interface ByParent extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.MaterialNode[]> {}
         export interface ByStoreroom extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.MaterialBase[]> {}
         export interface ByStoreroomAndId extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.MaterialBase[]> {}
-        export interface Keywords extends ServiceTypes.CoreResponseBase_<CoreTypes.MaterialKeywordBase[]> {}
+        export interface Keywords extends ServiceTypes.CoreResponseBase_<CoreTypes.MaterialKeyword[]> {}
         export interface MaterialBom extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.AssemblyMaterialDetail[]> {}
         export interface MaterialCategories extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.CodeDesc[]> {}
         export interface MaterialNodes extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.MaterialNode[]> {}

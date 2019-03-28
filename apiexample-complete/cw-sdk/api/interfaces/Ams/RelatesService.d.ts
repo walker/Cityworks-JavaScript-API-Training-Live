@@ -3,6 +3,12 @@ import AbortablePromise = PromiseTypes.AbortablePromise;
 
 export namespace RelatesServiceTypes { 
     export namespace Requests {
+        export interface ByTableName extends ServiceTypes.CoreRequestBase {
+            DomainId?: number;
+            FieldNames?: string[];
+            IncludeInactive?: boolean;
+            TableNames?: string[];
+        }
         export interface EquipChangeOutChangedBy extends ServiceTypes.CoreRequestBase {
             DomainId?: number;
             IncludeInactive?: boolean;
@@ -28,6 +34,14 @@ export namespace RelatesServiceTypes {
             IncludeInactive?: boolean;
         }
         export interface InspectionSubmitTo extends ServiceTypes.CoreRequestBase {
+            DomainId?: number;
+            IncludeInactive?: boolean;
+        }
+        export interface ProblemLeafDispatchTo extends ServiceTypes.CoreRequestBase {
+            DomainId?: number;
+            IncludeInactive?: boolean;
+        }
+        export interface ProblemLeafSubmitTo extends ServiceTypes.CoreRequestBase {
             DomainId?: number;
             IncludeInactive?: boolean;
         }
@@ -71,7 +85,16 @@ export namespace RelatesServiceTypes {
             DomainId?: number;
             IncludeInactive?: boolean;
         }
+        export interface TableFields extends ServiceTypes.CoreRequestBase {
+            FieldNames?: string[];
+            Modules?: string[];
+            TableNames?: string[];
+        }
         export interface TaskAssignTo extends ServiceTypes.CoreRequestBase {
+            DomainId?: number;
+            IncludeInactive?: boolean;
+        }
+        export interface TransferRequestedBy extends ServiceTypes.CoreRequestBase {
             DomainId?: number;
             IncludeInactive?: boolean;
         }
@@ -109,9 +132,12 @@ export namespace RelatesServiceTypes {
         }
     }
     export namespace Responses {
-        export interface EmployeeRelates extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.EmployeeRelate[]> {}
+        export interface ByTableName extends ServiceTypes.CoreResponseBase_<CoreTypes.RelEmpToField[]> {}
+        export interface EmployeeRelates extends ServiceTypes.CoreResponseBase_<CoreTypes.EmployeeRelate[]> {}
+        export interface TableFields extends ServiceTypes.CoreResponseBase_<CoreTypes.EmpRelTableField[]> {}
     }
     export interface IRelatesService {
+        ByTableName?: (request: Requests.ByTableName) => AbortablePromise<Responses.ByTableName>;
         EquipChangeOutChangedBy?: (request: Requests.EquipChangeOutChangedBy) => AbortablePromise<Responses.EmployeeRelates>;
         InspectionCancelledBy?: (request: Requests.InspectionCancelledBy) => AbortablePromise<Responses.EmployeeRelates>;
         InspectionClosedBy?: (request: Requests.InspectionClosedBy) => AbortablePromise<Responses.EmployeeRelates>;
@@ -119,6 +145,8 @@ export namespace RelatesServiceTypes {
         InspectionInitiatedBy?: (request: Requests.InspectionInitiatedBy) => AbortablePromise<Responses.EmployeeRelates>;
         InspectionInspectedBy?: (request: Requests.InspectionInspectedBy) => AbortablePromise<Responses.EmployeeRelates>;
         InspectionSubmitTo?: (request: Requests.InspectionSubmitTo) => AbortablePromise<Responses.EmployeeRelates>;
+        ProblemLeafDispatchTo?: (request: Requests.ProblemLeafDispatchTo) => AbortablePromise<Responses.EmployeeRelates>;
+        ProblemLeafSubmitTo?: (request: Requests.ProblemLeafSubmitTo) => AbortablePromise<Responses.EmployeeRelates>;
         ProjectApprovedBy?: (request: Requests.ProjectApprovedBy) => AbortablePromise<Responses.EmployeeRelates>;
         ProjectAssignedTo?: (request: Requests.ProjectAssignedTo) => AbortablePromise<Responses.EmployeeRelates>;
         ProjectInitiatedBy?: (request: Requests.ProjectInitiatedBy) => AbortablePromise<Responses.EmployeeRelates>;
@@ -129,7 +157,9 @@ export namespace RelatesServiceTypes {
         RequestInitiatedBy?: (request: Requests.RequestInitiatedBy) => AbortablePromise<Responses.EmployeeRelates>;
         RequestSubmitTo?: (request: Requests.RequestSubmitTo) => AbortablePromise<Responses.EmployeeRelates>;
         SearchViewCost?: (request: Requests.SearchViewCost) => AbortablePromise<Responses.EmployeeRelates>;
+        TableFields?: (request: Requests.TableFields) => AbortablePromise<Responses.TableFields>;
         TaskAssignTo?: (request: Requests.TaskAssignTo) => AbortablePromise<Responses.EmployeeRelates>;
+        TransferRequestedBy?: (request: Requests.TransferRequestedBy) => AbortablePromise<Responses.EmployeeRelates>;
         WorkOrderCancelledBy?: (request: Requests.WorkOrderCancelledBy) => AbortablePromise<Responses.EmployeeRelates>;
         WorkOrderClosedBy?: (request: Requests.WorkOrderClosedBy) => AbortablePromise<Responses.EmployeeRelates>;
         WorkOrderCompletedBy?: (request: Requests.WorkOrderCompletedBy) => AbortablePromise<Responses.EmployeeRelates>;

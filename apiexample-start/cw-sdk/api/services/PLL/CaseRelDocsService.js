@@ -5,18 +5,12 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     }
     Object.defineProperty(exports, "__esModule", { value: true });
     __export(api_service_1);
-    var CaseRelDocsService = (function () {
+    var CaseRelDocsService = /** @class */ (function () {
         function CaseRelDocsService(service) {
             this._service = service;
         }
         CaseRelDocsService.prototype.Add = function (request) {
             return this._service.call(request, 'PLL/CaseRelDocs/Add');
-        };
-        CaseRelDocsService.prototype.AddCaseAttachmentsToDataBase = function (request) {
-            return this._service.call(request, 'PLL/CaseRelDocs/AddCaseAttachmentsToDataBase');
-        };
-        CaseRelDocsService.prototype.AddCaseAttachmentToFileSystem = function (request) {
-            return this._service.call(request, 'PLL/CaseRelDocs/AddCaseAttachmentToFileSystem');
         };
         CaseRelDocsService.prototype.ByCaObjectId = function (request) {
             return this._service.call(request, 'PLL/CaseRelDocs/ByCaObjectId');

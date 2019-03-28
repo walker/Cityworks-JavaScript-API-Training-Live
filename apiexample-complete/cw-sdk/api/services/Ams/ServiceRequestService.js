@@ -5,7 +5,7 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     }
     Object.defineProperty(exports, "__esModule", { value: true });
     __export(api_service_1);
-    var ServiceRequestService = (function () {
+    var ServiceRequestService = /** @class */ (function () {
         function ServiceRequestService(service) {
             this._service = service;
         }
@@ -30,8 +30,14 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         ServiceRequestService.prototype.Cancel = function (request) {
             return this._service.call(request, 'Ams/ServiceRequest/Cancel');
         };
+        ServiceRequestService.prototype.ChangeCustomFieldCategory = function (request) {
+            return this._service.call(request, 'Ams/ServiceRequest/ChangeCustomFieldCategory');
+        };
         ServiceRequestService.prototype.Close = function (request) {
             return this._service.call(request, 'Ams/ServiceRequest/Close');
+        };
+        ServiceRequestService.prototype.Combine = function (request) {
+            return this._service.call(request, 'Ams/ServiceRequest/Combine');
         };
         ServiceRequestService.prototype.Comments = function (request) {
             return this._service.call(request, 'Ams/ServiceRequest/Comments');
@@ -51,6 +57,12 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         ServiceRequestService.prototype.CustomFields = function (request) {
             return this._service.call(request, 'Ams/ServiceRequest/CustomFields');
         };
+        ServiceRequestService.prototype.DefaultStatus = function (request) {
+            return this._service.call(request, 'Ams/ServiceRequest/DefaultStatus');
+        };
+        ServiceRequestService.prototype.DispatchTo = function (request) {
+            return this._service.call(request, 'Ams/ServiceRequest/DispatchTo');
+        };
         ServiceRequestService.prototype.LinkCases = function (request) {
             return this._service.call(request, 'Ams/ServiceRequest/LinkCases');
         };
@@ -59,6 +71,12 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         ServiceRequestService.prototype.LinkWorkOrders = function (request) {
             return this._service.call(request, 'Ams/ServiceRequest/LinkWorkOrders');
+        };
+        ServiceRequestService.prototype.Move = function (request) {
+            return this._service.call(request, 'Ams/ServiceRequest/Move');
+        };
+        ServiceRequestService.prototype.Priorities = function (request) {
+            return this._service.call(request, 'Ams/ServiceRequest/Priorities');
         };
         ServiceRequestService.prototype.ProblemLeafByOtherSysCodeDescs = function (request) {
             return this._service.call(request, 'Ams/ServiceRequest/ProblemLeafByOtherSysCodeDescs');
@@ -72,8 +90,14 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         ServiceRequestService.prototype.Problems = function (request) {
             return this._service.call(request, 'Ams/ServiceRequest/Problems');
         };
+        ServiceRequestService.prototype.ProblemsByKeywords = function (request) {
+            return this._service.call(request, 'Ams/ServiceRequest/ProblemsByKeywords');
+        };
         ServiceRequestService.prototype.QA = function (request) {
             return this._service.call(request, 'Ams/ServiceRequest/QA');
+        };
+        ServiceRequestService.prototype.Reopen = function (request) {
+            return this._service.call(request, 'Ams/ServiceRequest/Reopen');
         };
         ServiceRequestService.prototype.RequestInspections = function (request) {
             return this._service.call(request, 'Ams/ServiceRequest/RequestInspections');
@@ -90,8 +114,14 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         ServiceRequestService.prototype.Statuses = function (request) {
             return this._service.call(request, 'Ams/ServiceRequest/Statuses');
         };
+        ServiceRequestService.prototype.SubmitTo = function (request) {
+            return this._service.call(request, 'Ams/ServiceRequest/SubmitTo');
+        };
         ServiceRequestService.prototype.TemplateCustomFields = function (request) {
             return this._service.call(request, 'Ams/ServiceRequest/TemplateCustomFields');
+        };
+        ServiceRequestService.prototype.Uncancel = function (request) {
+            return this._service.call(request, 'Ams/ServiceRequest/Uncancel');
         };
         ServiceRequestService.prototype.UnlinkInspections = function (request) {
             return this._service.call(request, 'Ams/ServiceRequest/UnlinkInspections');

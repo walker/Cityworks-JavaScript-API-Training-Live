@@ -21,7 +21,7 @@ export namespace CaseObjectCommentsServiceTypes {
     export namespace Responses {
         export interface Add extends ServiceTypes.CoreResponseBase_<CoreTypes.CaObjectCommentsItemBase> {}
         export interface ByCaObjectId extends ServiceTypes.CoreResponseBase_<CoreTypes.CommentRecord[]> {}
-        export interface Delete extends ServiceTypes.CoreResponseBase {}
+        export interface Delete extends ServiceTypes.CoreResponseBase_<{[key: number]: boolean}> {}
         export interface Update extends ServiceTypes.CoreResponseBase_<CoreTypes.CaObjectCommentsItemBase> {}
     }
     export interface ICaseObjectCommentsService {

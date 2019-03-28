@@ -17,6 +17,20 @@ define(["require", "exports"], function (require, exports) {
             ActionType[ActionType["Email"] = 2] = "Email";
             ActionType[ActionType["WebHook"] = 3] = "WebHook";
         })(ActionType = Enums.ActionType || (Enums.ActionType = {}));
+        var ActivityLinkActivityType;
+        (function (ActivityLinkActivityType) {
+            ActivityLinkActivityType[ActivityLinkActivityType["Null"] = 0] = "Null";
+            ActivityLinkActivityType[ActivityLinkActivityType["Case"] = 1] = "Case";
+            ActivityLinkActivityType[ActivityLinkActivityType["Inspection"] = 2] = "Inspection";
+            ActivityLinkActivityType[ActivityLinkActivityType["ServiceRequest"] = 3] = "ServiceRequest";
+            ActivityLinkActivityType[ActivityLinkActivityType["WorkOrder"] = 4] = "WorkOrder";
+        })(ActivityLinkActivityType = Enums.ActivityLinkActivityType || (Enums.ActivityLinkActivityType = {}));
+        var ActivityLinkType;
+        (function (ActivityLinkType) {
+            ActivityLinkType[ActivityLinkType["Null"] = 0] = "Null";
+            ActivityLinkType[ActivityLinkType["Parent"] = 1] = "Parent";
+            ActivityLinkType[ActivityLinkType["Related"] = 2] = "Related";
+        })(ActivityLinkType = Enums.ActivityLinkType || (Enums.ActivityLinkType = {}));
         var ApiVersionEnum;
         (function (ApiVersionEnum) {
             ApiVersionEnum[ApiVersionEnum["V20121"] = 0] = "V20121";
@@ -35,6 +49,15 @@ define(["require", "exports"], function (require, exports) {
             ApiVersionEnum[ApiVersionEnum["V15_2_2"] = 13] = "V15_2_2";
             ApiVersionEnum[ApiVersionEnum["V15_2_3"] = 14] = "V15_2_3";
             ApiVersionEnum[ApiVersionEnum["V15_2_4"] = 15] = "V15_2_4";
+            ApiVersionEnum[ApiVersionEnum["V15_2_5"] = 16] = "V15_2_5";
+            ApiVersionEnum[ApiVersionEnum["V15_2_6"] = 17] = "V15_2_6";
+            ApiVersionEnum[ApiVersionEnum["V15_2_7"] = 18] = "V15_2_7";
+            ApiVersionEnum[ApiVersionEnum["V15_3"] = 19] = "V15_3";
+            ApiVersionEnum[ApiVersionEnum["V15_3_1"] = 20] = "V15_3_1";
+            ApiVersionEnum[ApiVersionEnum["V15_3_2"] = 21] = "V15_3_2";
+            ApiVersionEnum[ApiVersionEnum["V15_3_3"] = 22] = "V15_3_3";
+            ApiVersionEnum[ApiVersionEnum["V15_4"] = 23] = "V15_4";
+            ApiVersionEnum[ApiVersionEnum["V15_4_1"] = 24] = "V15_4_1";
         })(ApiVersionEnum = Enums.ApiVersionEnum || (Enums.ApiVersionEnum = {}));
         var ApplyLevel;
         (function (ApplyLevel) {
@@ -50,6 +73,25 @@ define(["require", "exports"], function (require, exports) {
             AssetRatingMethod[AssetRatingMethod["SIDEWALKRATING"] = 2] = "SIDEWALKRATING";
             AssetRatingMethod[AssetRatingMethod["TREEDAMAGERATING"] = 3] = "TREEDAMAGERATING";
         })(AssetRatingMethod = Enums.AssetRatingMethod || (Enums.AssetRatingMethod = {}));
+        var AttachmentFileType;
+        (function (AttachmentFileType) {
+            AttachmentFileType[AttachmentFileType["ATTACHMENT"] = 0] = "ATTACHMENT";
+            AttachmentFileType[AttachmentFileType["SIGNATURE"] = 1] = "SIGNATURE";
+        })(AttachmentFileType = Enums.AttachmentFileType || (Enums.AttachmentFileType = {}));
+        var ChangeOutOp;
+        (function (ChangeOutOp) {
+            ChangeOutOp[ChangeOutOp["DETACH"] = 0] = "DETACH";
+            ChangeOutOp[ChangeOutOp["ATTACH"] = 1] = "ATTACH";
+            ChangeOutOp[ChangeOutOp["REPLACE"] = 2] = "REPLACE";
+            ChangeOutOp[ChangeOutOp["NULL"] = 3] = "NULL";
+            ChangeOutOp[ChangeOutOp["READ"] = 4] = "READ";
+        })(ChangeOutOp = Enums.ChangeOutOp || (Enums.ChangeOutOp = {}));
+        var CodeDescUsage;
+        (function (CodeDescUsage) {
+            CodeDescUsage[CodeDescUsage["Null"] = 0] = "Null";
+            CodeDescUsage[CodeDescUsage["Code"] = 1] = "Code";
+            CodeDescUsage[CodeDescUsage["Description"] = 2] = "Description";
+        })(CodeDescUsage = Enums.CodeDescUsage || (Enums.CodeDescUsage = {}));
         var CommentActivityType;
         (function (CommentActivityType) {
             CommentActivityType[CommentActivityType["Request"] = 1] = "Request";
@@ -64,6 +106,14 @@ define(["require", "exports"], function (require, exports) {
             ContractorRateType[ContractorRateType["Fixed"] = 1] = "Fixed";
             ContractorRateType[ContractorRateType["PerUnit"] = 2] = "PerUnit";
         })(ContractorRateType = Enums.ContractorRateType || (Enums.ContractorRateType = {}));
+        var CoreResponseStatus;
+        (function (CoreResponseStatus) {
+            CoreResponseStatus[CoreResponseStatus["Ok"] = 0] = "Ok";
+            CoreResponseStatus[CoreResponseStatus["Error"] = 1] = "Error";
+            CoreResponseStatus[CoreResponseStatus["Unauthorized"] = 2] = "Unauthorized";
+            CoreResponseStatus[CoreResponseStatus["InvalidCredentials"] = 3] = "InvalidCredentials";
+            CoreResponseStatus[CoreResponseStatus["ConnectionError"] = -1] = "ConnectionError";
+        })(CoreResponseStatus = Enums.CoreResponseStatus || (Enums.CoreResponseStatus = {}));
         var CostUsage;
         (function (CostUsage) {
             CostUsage[CostUsage["Actual"] = 0] = "Actual";
@@ -106,6 +156,13 @@ define(["require", "exports"], function (require, exports) {
             DistressSeverity[DistressSeverity["H"] = 2] = "H";
             DistressSeverity[DistressSeverity["NA"] = 3] = "NA";
         })(DistressSeverity = Enums.DistressSeverity || (Enums.DistressSeverity = {}));
+        var EquipChangeOutType;
+        (function (EquipChangeOutType) {
+            EquipChangeOutType[EquipChangeOutType["AddRelationship"] = 0] = "AddRelationship";
+            EquipChangeOutType[EquipChangeOutType["ModifyRelationship"] = 1] = "ModifyRelationship";
+            EquipChangeOutType[EquipChangeOutType["DissolveRelationship"] = 2] = "DissolveRelationship";
+            EquipChangeOutType[EquipChangeOutType["Unknown"] = 3] = "Unknown";
+        })(EquipChangeOutType = Enums.EquipChangeOutType || (Enums.EquipChangeOutType = {}));
         var EquipmentRateType;
         (function (EquipmentRateType) {
             EquipmentRateType[EquipmentRateType["Hourly"] = 0] = "Hourly";
@@ -121,6 +178,9 @@ define(["require", "exports"], function (require, exports) {
             EventSourceType[EventSourceType["WorkOrderLabor"] = 5] = "WorkOrderLabor";
             EventSourceType[EventSourceType["RequestLabor"] = 6] = "RequestLabor";
             EventSourceType[EventSourceType["Unknown"] = 7] = "Unknown";
+            EventSourceType[EventSourceType["SMS"] = 8] = "SMS";
+            EventSourceType[EventSourceType["CaTaskItem"] = 9] = "CaTaskItem";
+            EventSourceType[EventSourceType["WoTask"] = 10] = "WoTask";
         })(EventSourceType = Enums.EventSourceType || (Enums.EventSourceType = {}));
         var EventTriggerType;
         (function (EventTriggerType) {
@@ -147,6 +207,13 @@ define(["require", "exports"], function (require, exports) {
             GISRight[GISRight["Attribute"] = 1] = "Attribute";
             GISRight[GISRight["Geometry"] = 2] = "Geometry";
         })(GISRight = Enums.GISRight || (Enums.GISRight = {}));
+        var GISServiceSecurityType;
+        (function (GISServiceSecurityType) {
+            GISServiceSecurityType[GISServiceSecurityType["NONE"] = 0] = "NONE";
+            GISServiceSecurityType[GISServiceSecurityType["GENERATETOKEN"] = 1] = "GENERATETOKEN";
+            GISServiceSecurityType[GISServiceSecurityType["OAUTHUSER"] = 2] = "OAUTHUSER";
+            GISServiceSecurityType[GISServiceSecurityType["OAUTHAPP"] = 3] = "OAUTHAPP";
+        })(GISServiceSecurityType = Enums.GISServiceSecurityType || (Enums.GISServiceSecurityType = {}));
         var GISServiceType;
         (function (GISServiceType) {
             GISServiceType[GISServiceType["DYNAMICMAP"] = 0] = "DYNAMICMAP";
@@ -167,6 +234,7 @@ define(["require", "exports"], function (require, exports) {
             GISServiceType[GISServiceType["PRINTING"] = 15] = "PRINTING";
             GISServiceType[GISServiceType["ROUTING"] = 16] = "ROUTING";
             GISServiceType[GISServiceType["VECTORTILE"] = 17] = "VECTORTILE";
+            GISServiceType[GISServiceType["MOBILEMAPPACKAGE"] = 18] = "MOBILEMAPPACKAGE";
         })(GISServiceType = Enums.GISServiceType || (Enums.GISServiceType = {}));
         var InspQuestionType;
         (function (InspQuestionType) {
@@ -364,6 +432,9 @@ define(["require", "exports"], function (require, exports) {
             SearchType[SearchType["CustomerAccount"] = 25] = "CustomerAccount";
             SearchType[SearchType["InspTemplate"] = 26] = "InspTemplate";
             SearchType[SearchType["ProblemLeaf"] = 27] = "ProblemLeaf";
+            SearchType[SearchType["AssetSplitRecord"] = 28] = "AssetSplitRecord";
+            SearchType[SearchType["PavementInsp"] = 29] = "PavementInsp";
+            SearchType[SearchType["TvInspection"] = 30] = "TvInspection";
         })(SearchType = Enums.SearchType || (Enums.SearchType = {}));
         var SearchView;
         (function (SearchView) {
@@ -408,7 +479,44 @@ define(["require", "exports"], function (require, exports) {
             SourceEventType[SourceEventType["WorkOrderStatusChanged"] = 30] = "WorkOrderStatusChanged";
             SourceEventType[SourceEventType["RequestStatusChanged"] = 31] = "RequestStatusChanged";
             SourceEventType[SourceEventType["InspectionStatusChanged"] = 32] = "InspectionStatusChanged";
+            SourceEventType[SourceEventType["RequestCommentAdded"] = 33] = "RequestCommentAdded";
+            SourceEventType[SourceEventType["RequestCommentUpdated"] = 34] = "RequestCommentUpdated";
+            SourceEventType[SourceEventType["RequestCommentDeleted"] = 35] = "RequestCommentDeleted";
+            SourceEventType[SourceEventType["WorkOrderCommentAdded"] = 36] = "WorkOrderCommentAdded";
+            SourceEventType[SourceEventType["WorkOrderCommentUpdated"] = 37] = "WorkOrderCommentUpdated";
+            SourceEventType[SourceEventType["WorkOrderCommentDeleted"] = 38] = "WorkOrderCommentDeleted";
+            SourceEventType[SourceEventType["CaCorrectionCommentAdded"] = 39] = "CaCorrectionCommentAdded";
+            SourceEventType[SourceEventType["CaCorrectionCommentUpdated"] = 40] = "CaCorrectionCommentUpdated";
+            SourceEventType[SourceEventType["CaCorrectionCommentDeleted"] = 41] = "CaCorrectionCommentDeleted";
+            SourceEventType[SourceEventType["CaTaskCommentAdded"] = 42] = "CaTaskCommentAdded";
+            SourceEventType[SourceEventType["CaTaskCommentUpdated"] = 43] = "CaTaskCommentUpdated";
+            SourceEventType[SourceEventType["CaTaskCommentDeleted"] = 44] = "CaTaskCommentDeleted";
+            SourceEventType[SourceEventType["CaObjectCommentAdded"] = 45] = "CaObjectCommentAdded";
+            SourceEventType[SourceEventType["CaObjectCommentUpdated"] = 46] = "CaObjectCommentUpdated";
+            SourceEventType[SourceEventType["CaObjectCommentDeleted"] = 47] = "CaObjectCommentDeleted";
+            SourceEventType[SourceEventType["CaTaskItemCompleted"] = 48] = "CaTaskItemCompleted";
+            SourceEventType[SourceEventType["WoTaskAdded"] = 50] = "WoTaskAdded";
+            SourceEventType[SourceEventType["WoTaskAssignedToChanged"] = 51] = "WoTaskAssignedToChanged";
+            SourceEventType[SourceEventType["WoTaskCommentAdded"] = 52] = "WoTaskCommentAdded";
+            SourceEventType[SourceEventType["WoTaskCommentDeleted"] = 53] = "WoTaskCommentDeleted";
+            SourceEventType[SourceEventType["WoTaskCommentUpdated"] = 54] = "WoTaskCommentUpdated";
+            SourceEventType[SourceEventType["WoTaskDeleted"] = 55] = "WoTaskDeleted";
+            SourceEventType[SourceEventType["WoTaskProceedUpdated"] = 56] = "WoTaskProceedUpdated";
+            SourceEventType[SourceEventType["WoTaskReworkUpdated"] = 57] = "WoTaskReworkUpdated";
+            SourceEventType[SourceEventType["WoTaskStatusChanged"] = 58] = "WoTaskStatusChanged";
         })(SourceEventType = Enums.SourceEventType || (Enums.SourceEventType = {}));
+        var StandardInspTableName;
+        (function (StandardInspTableName) {
+            StandardInspTableName[StandardInspTableName["SDYETEST"] = 0] = "SDYETEST";
+            StandardInspTableName[StandardInspTableName["SMANHOLEINSP"] = 1] = "SMANHOLEINSP";
+            StandardInspTableName[StandardInspTableName["SSMOKETEST"] = 2] = "SSMOKETEST";
+            StandardInspTableName[StandardInspTableName["STVINSPECTION"] = 3] = "STVINSPECTION";
+            StandardInspTableName[StandardInspTableName["WFIREHYDFLOWTEST"] = 4] = "WFIREHYDFLOWTEST";
+            StandardInspTableName[StandardInspTableName["EQUIPCHANGEOUT"] = 5] = "EQUIPCHANGEOUT";
+            StandardInspTableName[StandardInspTableName["WVALVDEVINSP"] = 6] = "WVALVDEVINSP";
+            StandardInspTableName[StandardInspTableName["WHYDDEVINSP"] = 7] = "WHYDDEVINSP";
+            StandardInspTableName[StandardInspTableName["SSTINLETINSP"] = 8] = "SSTINLETINSP";
+        })(StandardInspTableName = Enums.StandardInspTableName || (Enums.StandardInspTableName = {}));
         var TimeIntervalUnit;
         (function (TimeIntervalUnit) {
             TimeIntervalUnit[TimeIntervalUnit["HOUR"] = 0] = "HOUR";
@@ -426,6 +534,13 @@ define(["require", "exports"], function (require, exports) {
             TransactionType[TransactionType["FRTRASH"] = 5] = "FRTRASH";
             TransactionType[TransactionType["TOTRASH"] = 6] = "TOTRASH";
         })(TransactionType = Enums.TransactionType || (Enums.TransactionType = {}));
+        var TraverseNetworkDirection;
+        (function (TraverseNetworkDirection) {
+            TraverseNetworkDirection[TraverseNetworkDirection["Unknown"] = 0] = "Unknown";
+            TraverseNetworkDirection[TraverseNetworkDirection["Up"] = 1] = "Up";
+            TraverseNetworkDirection[TraverseNetworkDirection["Down"] = 2] = "Down";
+            TraverseNetworkDirection[TraverseNetworkDirection["Both"] = 3] = "Both";
+        })(TraverseNetworkDirection = Enums.TraverseNetworkDirection || (Enums.TraverseNetworkDirection = {}));
         var TreeNodeTextType;
         (function (TreeNodeTextType) {
             TreeNodeTextType[TreeNodeTextType["C"] = 0] = "C";
@@ -439,6 +554,87 @@ define(["require", "exports"], function (require, exports) {
             TreeNodeType[TreeNodeType["L"] = 2] = "L";
             TreeNodeType[TreeNodeType["Null"] = 3] = "Null";
         })(TreeNodeType = Enums.TreeNodeType || (Enums.TreeNodeType = {}));
+        var TvObservationCause;
+        (function (TvObservationCause) {
+            TvObservationCause[TvObservationCause["S"] = 0] = "S";
+            TvObservationCause[TvObservationCause["I"] = 1] = "I";
+            TvObservationCause[TvObservationCause["R"] = 2] = "R";
+            TvObservationCause[TvObservationCause["O"] = 3] = "O";
+        })(TvObservationCause = Enums.TvObservationCause || (Enums.TvObservationCause = {}));
+        var TvObservationMethod;
+        (function (TvObservationMethod) {
+            TvObservationMethod[TvObservationMethod["STANDARD"] = 0] = "STANDARD";
+            TvObservationMethod[TvObservationMethod["CCTV"] = 1] = "CCTV";
+        })(TvObservationMethod = Enums.TvObservationMethod || (Enums.TvObservationMethod = {}));
+        var VerificationStatus;
+        (function (VerificationStatus) {
+            VerificationStatus[VerificationStatus["Unverified"] = 0] = "Unverified";
+            VerificationStatus[VerificationStatus["Pass"] = 1] = "Pass";
+            VerificationStatus[VerificationStatus["Fail"] = 2] = "Fail";
+        })(VerificationStatus = Enums.VerificationStatus || (Enums.VerificationStatus = {}));
+        var WebHookCustomPacketTemplateFlag;
+        (function (WebHookCustomPacketTemplateFlag) {
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["Unknown"] = 0] = "Unknown";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["ApiUserToken"] = 1] = "ApiUserToken";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["Comments"] = 2] = "Comments";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["CwWkid"] = 3] = "CwWkid";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["GetDate"] = 4] = "GetDate";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["QuestionAnswer"] = 5] = "QuestionAnswer";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["ServiceResourceSecurityToken"] = 6] = "ServiceResourceSecurityToken";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["GisItemOid"] = 7] = "GisItemOid";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["GisItemGlobalId"] = 8] = "GisItemGlobalId";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["CancelledByPager"] = 9] = "CancelledByPager";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["CancelledByWorkPhone"] = 10] = "CancelledByWorkPhone";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["ClosedByPager"] = 11] = "ClosedByPager";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["ClosedByWorkPhone"] = 12] = "ClosedByWorkPhone";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["CurrentUserPager"] = 13] = "CurrentUserPager";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["CurrentUserWorkPhone"] = 14] = "CurrentUserWorkPhone";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["DispatchOpenByPager"] = 15] = "DispatchOpenByPager";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["DispatchOpenByWorkPhone"] = 16] = "DispatchOpenByWorkPhone";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["DispatchToPager"] = 17] = "DispatchToPager";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["DispatchToWorkPhone"] = 18] = "DispatchToWorkPhone";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["InitiatedByPager"] = 19] = "InitiatedByPager";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["InitiatedByWorkPhone"] = 20] = "InitiatedByWorkPhone";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["InspectedByPager"] = 21] = "InspectedByPager";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["InspectedByWorkPhone"] = 22] = "InspectedByWorkPhone";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["RequestedByPager"] = 23] = "RequestedByPager";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["RequestedByWorkPhone"] = 24] = "RequestedByWorkPhone";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["SubmitToOpenByPager"] = 25] = "SubmitToOpenByPager";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["SubmitToOpenByWorkPhone"] = 26] = "SubmitToOpenByWorkPhone";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["SubmitToPager"] = 27] = "SubmitToPager";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["SubmitToWorkPhone"] = 28] = "SubmitToWorkPhone";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["SupervisorPager"] = 29] = "SupervisorPager";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["SupervisorWorkPhone"] = 30] = "SupervisorWorkPhone";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["WorkCompletedByPager"] = 31] = "WorkCompletedByPager";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["WorkCompletedByWorkPhone"] = 32] = "WorkCompletedByWorkPhone";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["CancelledByPager_Numeric"] = 33] = "CancelledByPager_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["CancelledByWorkPhone_Numeric"] = 34] = "CancelledByWorkPhone_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["ClosedByPager_Numeric"] = 35] = "ClosedByPager_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["ClosedByWorkPhone_Numeric"] = 36] = "ClosedByWorkPhone_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["CurrentUserPager_Numeric"] = 37] = "CurrentUserPager_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["CurrentUserWorkPhone_Numeric"] = 38] = "CurrentUserWorkPhone_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["DispatchOpenByPager_Numeric"] = 39] = "DispatchOpenByPager_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["DispatchOpenByWorkPhone_Numeric"] = 40] = "DispatchOpenByWorkPhone_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["DispatchToPager_Numeric"] = 41] = "DispatchToPager_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["DispatchToWorkPhone_Numeric"] = 42] = "DispatchToWorkPhone_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["InitiatedByPager_Numeric"] = 43] = "InitiatedByPager_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["InitiatedByWorkPhone_Numeric"] = 44] = "InitiatedByWorkPhone_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["InspectedByPager_Numeric"] = 45] = "InspectedByPager_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["InspectedByWorkPhone_Numeric"] = 46] = "InspectedByWorkPhone_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["RequestedByPager_Numeric"] = 47] = "RequestedByPager_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["RequestedByWorkPhone_Numeric"] = 48] = "RequestedByWorkPhone_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["SubmitToOpenByPager_Numeric"] = 49] = "SubmitToOpenByPager_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["SubmitToOpenByWorkPhone_Numeric"] = 50] = "SubmitToOpenByWorkPhone_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["SubmitToPager_Numeric"] = 51] = "SubmitToPager_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["SubmitToWorkPhone_Numeric"] = 52] = "SubmitToWorkPhone_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["SupervisorPager_Numeric"] = 53] = "SupervisorPager_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["SupervisorWorkPhone_Numeric"] = 54] = "SupervisorWorkPhone_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["WorkCompletedByPager_Numeric"] = 55] = "WorkCompletedByPager_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["WorkCompletedByWorkPhone_Numeric"] = 56] = "WorkCompletedByWorkPhone_Numeric";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["BaseObjectAsJson"] = 57] = "BaseObjectAsJson";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["RequestWorkOrderIds"] = 58] = "RequestWorkOrderIds";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["WorkOrderRequestIds"] = 59] = "WorkOrderRequestIds";
+        })(WebHookCustomPacketTemplateFlag = Enums.WebHookCustomPacketTemplateFlag || (Enums.WebHookCustomPacketTemplateFlag = {}));
         var WebHookOutputType;
         (function (WebHookOutputType) {
             WebHookOutputType[WebHookOutputType["JSON"] = 0] = "JSON";

@@ -40,6 +40,7 @@ export namespace StoreroomServiceTypes {
             MaterialSid: number;
             PoNum?: string;
             Quantity: number;
+            ReceiveFromEmpSid?: number;
             RequisitionItemId?: number;
             SupplierUid?: string;
             TagNum?: string;
@@ -124,6 +125,9 @@ export namespace StoreroomServiceTypes {
             TransDateTime?: Date;
             WorkOrderId?: string;
         }
+        export interface MaterialsByEmployeeSid extends ServiceTypes.CoreRequestBase {
+            EmployeeSid: number;
+        }
         export interface RequisitionItems extends ServiceTypes.CoreRequestBase {
             RequisitionSid: number;
         }
@@ -204,6 +208,7 @@ export namespace StoreroomServiceTypes {
         export interface AddSupplierMaterial extends ServiceTypes.CoreResponseBase_<CoreTypes.SupplierMaterialBase> {}
         export interface AddTransfer extends ServiceTypes.CoreResponseBase_<CoreTypes.Transfer> {}
         export interface BuildAssemblyMaterial extends ServiceTypes.CoreResponseBase_<CoreTypes.AssemblyTransactions> {}
+        export interface MaterialsByEmployeeSid extends ServiceTypes.CoreResponseBase_<CoreTypes.MaterialBase[]> {}
         export interface RequisitionItems extends ServiceTypes.CoreResponseBase_<CoreTypes.RequisitionItem[]> {}
         export interface Requisitions extends ServiceTypes.CoreResponseBase_<CoreTypes.Requisition[]> {}
         export interface SearchSuppliersByUid extends ServiceTypes.CoreResponseBase_<CoreTypes.Supplier[]> {}
@@ -225,6 +230,7 @@ export namespace StoreroomServiceTypes {
         AddSupplierMaterial?: (request: Requests.AddSupplierMaterial) => AbortablePromise<Responses.AddSupplierMaterial>;
         AddTransfer?: (request: Requests.AddTransfer) => AbortablePromise<Responses.AddTransfer>;
         BuildAssemblyMaterial?: (request: Requests.BuildAssemblyMaterial) => AbortablePromise<Responses.BuildAssemblyMaterial>;
+        MaterialsByEmployeeSid?: (request: Requests.MaterialsByEmployeeSid) => AbortablePromise<Responses.MaterialsByEmployeeSid>;
         RequisitionItems?: (request: Requests.RequisitionItems) => AbortablePromise<Responses.RequisitionItems>;
         Requisitions?: (request: Requests.Requisitions) => AbortablePromise<Responses.Requisitions>;
         SearchSuppliersByUid?: (request: Requests.SearchSuppliersByUid) => AbortablePromise<Responses.SearchSuppliersByUid>;

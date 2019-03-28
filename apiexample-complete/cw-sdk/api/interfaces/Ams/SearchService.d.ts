@@ -4,6 +4,7 @@ import AbortablePromise = PromiseTypes.AbortablePromise;
 export namespace SearchServiceTypes { 
     export namespace Requests {
         export interface AssetCalculationResultSaved extends ServiceTypes.CoreRequestBase {
+            ApplyToEntity?: string;
             Keywords?: string[];
         }
         export interface Definition extends ServiceTypes.CoreRequestBase {
@@ -31,6 +32,7 @@ export namespace SearchServiceTypes {
             IdsOnly?: boolean;
             IncludeSearchOrder?: boolean;
             MaxResults?: number;
+            ResultFields?: string[];
             SearchId: number;
             TotalOnly?: boolean;
         }
@@ -61,8 +63,11 @@ export namespace SearchServiceTypes {
             SearchType?: number;
         }
         export interface SaveDefinition extends ServiceTypes.CoreRequestBase {
+            ApplyToEntity?: string;
+            CalculationId?: number;
             Description?: string;
             EmployeeSid?: number;
+            EnableEurl?: boolean;
             Keywords?: string[];
             SearchCustomFields?: CoreTypes.SearchCustomField[];
             SearchDateFields?: CoreTypes.SearchDateField[];
@@ -83,6 +88,10 @@ export namespace SearchServiceTypes {
         }
         export interface Types extends ServiceTypes.CoreRequestBase {
         }
+        export interface UpdateEurl extends ServiceTypes.CoreRequestBase {
+            Enable?: boolean;
+            SearchIds: number[];
+        }
         export interface WorkActivitySaved extends ServiceTypes.CoreRequestBase {
             Keywords?: string[];
         }
@@ -96,7 +105,6 @@ export namespace SearchServiceTypes {
     export namespace Responses {
         export interface Saved extends ServiceTypes.CoreResponseBase_<CoreTypes.SearchDefinitionName[]> {}
         export interface Definition extends ServiceTypes.CoreResponseBase_<CoreTypes.SearchDefinition> {}
-        export interface DefinitionNames extends ServiceTypes.CoreResponseBase_<CoreTypes.SearchDefinitionName[]> {}
         export interface Definitions extends ServiceTypes.CoreResponseBase_<CoreTypes.SearchDefinition[]> {}
         export interface DeleteDefinitions extends ServiceTypes.CoreResponseBase_<{[key: number]: boolean}> {}
         export interface DisplayFields extends ServiceTypes.CoreResponseBase_<CoreTypes.SearchDisplayField[]> {}
@@ -104,11 +112,12 @@ export namespace SearchServiceTypes {
         export interface RecentActivity extends ServiceTypes.CoreResponseBase_<CoreTypes.RecentActivity[]> {}
         export interface SaveDefinition extends ServiceTypes.CoreResponseBase_<CoreTypes.SearchDefinitionName> {}
         export interface Types extends ServiceTypes.CoreResponseBase_<CoreTypes.SearchTypeInfo[]> {}
+        export interface UpdateEurl extends ServiceTypes.CoreResponseBase_<{[key: number]: boolean}> {}
     }
     export interface ISearchService {
         AssetCalculationResultSaved?: (request: Requests.AssetCalculationResultSaved) => AbortablePromise<Responses.Saved>;
         Definition?: (request: Requests.Definition) => AbortablePromise<Responses.Definition>;
-        DefinitionNames?: (request: Requests.DefinitionNames) => AbortablePromise<Responses.DefinitionNames>;
+        DefinitionNames?: (request: Requests.DefinitionNames) => AbortablePromise<Responses.Saved>;
         Definitions?: (request: Requests.Definitions) => AbortablePromise<Responses.Definitions>;
         DeleteDefinitions?: (request: Requests.DeleteDefinitions) => AbortablePromise<Responses.DeleteDefinitions>;
         DisplayFields?: (request: Requests.DisplayFields) => AbortablePromise<Responses.DisplayFields>;
@@ -124,6 +133,7 @@ export namespace SearchServiceTypes {
         SaveDefinition?: (request: Requests.SaveDefinition) => AbortablePromise<Responses.SaveDefinition>;
         StoreTransactionSaved?: (request: Requests.StoreTransactionSaved) => AbortablePromise<Responses.Saved>;
         Types?: (request: Requests.Types) => AbortablePromise<Responses.Types>;
+        UpdateEurl?: (request: Requests.UpdateEurl) => AbortablePromise<Responses.UpdateEurl>;
         WorkActivitySaved?: (request: Requests.WorkActivitySaved) => AbortablePromise<Responses.Saved>;
         WorkOrderEntitySaved?: (request: Requests.WorkOrderEntitySaved) => AbortablePromise<Responses.Saved>;
         WorkOrderSaved?: (request: Requests.WorkOrderSaved) => AbortablePromise<Responses.Saved>;

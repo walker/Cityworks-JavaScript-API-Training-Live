@@ -32,6 +32,7 @@ export declare class InspectionService implements IInspectionService {
     Move(request: Requests.Move): AbortablePromise<Responses.Move>;
     Priorities(request: Requests.Priorities): AbortablePromise<Responses.Priorities>;
     QA(request: Requests.QA): AbortablePromise<Responses.QA>;
+    Questions(request: Requests.Questions): AbortablePromise<Responses.Questions>;
     RemoveEntity(request: Requests.RemoveEntity): AbortablePromise<Responses.RemoveEntity>;
     Resolutions(request: Requests.Resolutions): AbortablePromise<Responses.Resolutions>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;

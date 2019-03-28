@@ -11,7 +11,7 @@ define(["require", "exports", "../core/promise"], function (require, exports, pr
             var isStandardDate = isString && DATE_REGEX_LOCAL.test(value);
             //------------------------------------------------------------
             //  Try to parse dates
-            //------------------------------------------------------------           
+            //------------------------------------------------------------
             if (isStandardDate) {
                 var result = DATE_REGEX_LOCAL.exec(value);
                 // Get all of the date's components.
@@ -37,7 +37,7 @@ define(["require", "exports", "../core/promise"], function (require, exports, pr
             return retVal;
         });
     }
-    function post(url, token, dataParams) {
+    function post(url, token, csrfToken, csrfTokenHeader, dataParams) {
         var xhr = new XMLHttpRequest();
         var isAborting = false;
         var promise = new Promise(function (resolve, reject) {
@@ -53,6 +53,9 @@ define(["require", "exports", "../core/promise"], function (require, exports, pr
             }
             xhr.open('POST', apiUrl, true);
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            if (csrfTokenHeader && csrfTokenHeader.length > 0 && csrfToken && csrfToken.length > 0) {
+                xhr.setRequestHeader(csrfTokenHeader, csrfToken);
+            }
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {

@@ -20,10 +20,18 @@ export declare class EntityService implements IEntityService {
     Configuration(request: Requests.Configuration): AbortablePromise<Responses.Configuration>;
     CostHistory(request: Requests.CostHistory): AbortablePromise<Responses.CostHistory>;
     CostTotal(request: Requests.CostTotal): AbortablePromise<Responses.CostTotal>;
+    DistinctValues(request: Requests.DistinctValues): AbortablePromise<Responses.DistinctValues>;
+    DomainTypes(request: Requests.DomainTypes): AbortablePromise<Responses.DomainTypes>;
     EntityUidField(request: Requests.EntityUidField): AbortablePromise<Responses.EntityUidField>;
+    FiveNumberSummary(request: Requests.FiveNumberSummary): AbortablePromise<Responses.FiveNumberSummary>;
     Groups(request: Requests.Groups): AbortablePromise<Responses.Groups>;
     ProcessSplits(request: Requests.ProcessSplits): AbortablePromise<Responses.ProcessSplits>;
     RemoveAlias(request: Requests.RemoveAlias): AbortablePromise<Responses.AssetAlias>;
+    Search(request: Requests.Search): AbortablePromise<Responses.Search>;
+    SearchAsWorkOrderEntity(request: Requests.SearchAsWorkOrderEntity): AbortablePromise<Responses.SearchAsWorkOrderEntity>;
+    SplitEntities(request: Requests.SplitEntities): AbortablePromise<Responses.SplitEntities>;
+    Splits(request: Requests.Splits): AbortablePromise<Responses.Splits>;
+    SubTypes(request: Requests.SubTypes): AbortablePromise<Responses.SubTypes>;
     TypeRelationships(request: Requests.TypeRelationships): AbortablePromise<Responses.TypeRelationships>;
     Types(request: Requests.Types): AbortablePromise<Responses.Types>;
     VisibleFields(request: Requests.VisibleFields): AbortablePromise<Responses.VisibleFields>;

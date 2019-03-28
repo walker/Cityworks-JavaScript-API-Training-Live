@@ -72,8 +72,11 @@ export namespace CustomerCallServiceTypes {
         }
         export interface Update extends ServiceTypes.CoreRequestBase {
             AcctNum?: string;
+            Answers?: CoreTypes.ServiceRequestAnswer[];
             AptNum?: string;
             CallerType?: string;
+            Ccx?: number;
+            Ccy?: number;
             CellPhone?: string;
             Comments?: string;
             CustAddress?: string;
@@ -99,6 +102,7 @@ export namespace CustomerCallServiceTypes {
             MiddleInitial?: string;
             OtherPhone?: string;
             ProbDetails?: string;
+            RequestId?: number;
             Text1?: string;
             Text2?: string;
             Text3?: string;
@@ -109,15 +113,15 @@ export namespace CustomerCallServiceTypes {
         }
     }
     export namespace Responses {
-        export interface AddToRequest extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.CustomerCallBase> {}
-        export interface ByIncidentNum extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.CustomerCallBase> {}
-        export interface ByRequestId extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.CustomerCallBase[]> {}
+        export interface AddToRequest extends ServiceTypes.CoreResponseBase_<CoreTypes.CustomerCallBase> {}
+        export interface ByIncidentNum extends ServiceTypes.CoreResponseBase_<CoreTypes.CustomerCallBase> {}
+        export interface ByRequestId extends ServiceTypes.CoreResponseBase_<CoreTypes.CustomerCallBase[]> {}
         export interface CallerQuestions extends ServiceTypes.CoreResponseBase_<CoreTypes.CustCallQuestionBase[]> {}
         export interface CallerQuestionsByRequestIds extends ServiceTypes.CoreResponseBase_<{[key: number]: CoreTypes.CustCallQuestionBase[]}> {}
-        export interface Delete extends ServiceTypes.CoreResponseBase_obsolete {}
-        export interface Move extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.GISPoint> {}
-        export interface MoveToRequest extends ServiceTypes.CoreResponseBase_obsolete {}
-        export interface Update extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.CustomerCallBase> {}
+        export interface Delete extends ServiceTypes.CoreResponseBase {}
+        export interface Move extends ServiceTypes.CoreResponseBase_<CoreTypes.GISPoint> {}
+        export interface MoveToRequest extends ServiceTypes.CoreResponseBase {}
+        export interface Update extends ServiceTypes.CoreResponseBase_<CoreTypes.CustomerCallBase> {}
     }
     export interface ICustomerCallService {
         AddToRequest?: (request: Requests.AddToRequest) => AbortablePromise<Responses.AddToRequest>;

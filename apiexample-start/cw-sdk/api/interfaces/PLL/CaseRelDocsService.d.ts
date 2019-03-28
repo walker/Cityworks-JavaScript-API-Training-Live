@@ -5,34 +5,6 @@ export namespace CaseRelDocsServiceTypes {
     export namespace Requests {
         export interface Add extends ServiceTypes.CoreRequestBase {
             CaObjectId: number;
-            CommentText?: string;
-            ContentLength?: number;
-            ContentType?: string;
-            DocName: string;
-            DocumentContent?: number[];
-            Location?: string;
-            LocationType: string;
-            UserDefinedLocation?: boolean;
-        }
-        export interface AddCaseAttachmentsToDataBase extends ServiceTypes.CoreRequestBase {
-            CaObjectId: number;
-            CommentText?: string;
-            ContentLength?: number;
-            ContentType?: string;
-            DocName: string;
-            DocumentContent?: number[];
-            Location?: string;
-            UserDefinedLocation?: boolean;
-        }
-        export interface AddCaseAttachmentToFileSystem extends ServiceTypes.CoreRequestBase {
-            CaObjectId: number;
-            CommentText?: string;
-            ContentLength?: number;
-            ContentType?: string;
-            DocName: string;
-            DocumentContent?: number[];
-            Location?: string;
-            UserDefinedLocation?: boolean;
         }
         export interface ByCaObjectId extends ServiceTypes.CoreRequestBase {
             CaObjectId?: number;
@@ -64,8 +36,6 @@ export namespace CaseRelDocsServiceTypes {
     }
     export interface ICaseRelDocsService {
         Add?: (request: Requests.Add) => AbortablePromise<Responses.Add>;
-        AddCaseAttachmentsToDataBase?: (request: Requests.AddCaseAttachmentsToDataBase) => AbortablePromise<Responses.Add>;
-        AddCaseAttachmentToFileSystem?: (request: Requests.AddCaseAttachmentToFileSystem) => AbortablePromise<Responses.Add>;
         ByCaObjectId?: (request: Requests.ByCaObjectId) => AbortablePromise<Responses.ByCaObjectId>;
         Delete?: (request: Requests.Delete) => AbortablePromise<Responses.Delete>;
         DeleteByCaObjectId?: (request: Requests.DeleteByCaObjectId) => AbortablePromise<Responses.DeleteByCaObjectId>;

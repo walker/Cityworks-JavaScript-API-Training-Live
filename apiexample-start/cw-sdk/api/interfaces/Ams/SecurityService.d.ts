@@ -3,6 +3,12 @@ import AbortablePromise = PromiseTypes.AbortablePromise;
 
 export namespace SecurityServiceTypes { 
     export namespace Requests {
+        export interface Contract extends ServiceTypes.CoreRequestBase {
+            ContractId: number;
+        }
+        export interface Contracts extends ServiceTypes.CoreRequestBase {
+            ContractIds: number[];
+        }
         export interface Inspection extends ServiceTypes.CoreRequestBase {
             InspectionId: number;
         }
@@ -43,6 +49,8 @@ export namespace SecurityServiceTypes {
         }
     }
     export namespace Responses {
+        export interface Contract extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractSecurity> {}
+        export interface Contracts extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractSecurity[]> {}
         export interface Inspection extends ServiceTypes.CoreResponseBase_<CoreTypes.InspectionSecurity> {}
         export interface Inspections extends ServiceTypes.CoreResponseBase_<CoreTypes.InspectionSecurity[]> {}
         export interface InspectionTemplate extends ServiceTypes.CoreResponseBase_<CoreTypes.InspectionTemplateSecurity> {}
@@ -57,6 +65,8 @@ export namespace SecurityServiceTypes {
         export interface WorkOrderTemplate extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderTemplateSecurity> {}
     }
     export interface ISecurityService {
+        Contract?: (request: Requests.Contract) => AbortablePromise<Responses.Contract>;
+        Contracts?: (request: Requests.Contracts) => AbortablePromise<Responses.Contracts>;
         Inspection?: (request: Requests.Inspection) => AbortablePromise<Responses.Inspection>;
         Inspections?: (request: Requests.Inspections) => AbortablePromise<Responses.Inspections>;
         InspectionTemplate?: (request: Requests.InspectionTemplate) => AbortablePromise<Responses.InspectionTemplate>;

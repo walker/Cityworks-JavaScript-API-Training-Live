@@ -1,12 +1,15 @@
-define(["require", "exports", "../bundles/core", "../api/services/general/AuthenticationService", "./http-service"], function (require, exports, Core, AuthenticationService_1, http) {
+define(["require", "exports", "../bundles/core", "../api/services/general/AuthenticationService", "./http-service", "./cookie-service"], function (require, exports, Core, AuthenticationService_1, http, cookie_service_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var ServiceEnums = Core.ServiceEnums;
-    var ApiService = (function () {
+    var ApiService = /** @class */ (function () {
         function ApiService(baseUrl, token) {
             if (token === void 0) { token = null; }
-            this._token = null;
+            this._csrfTokenCookieName = 'cw-reqtkn';
+            this._csrfHeaderName = 'cw-csrf';
             this._baseUrl = null;
+            this._csrfToken = null;
+            this._token = null;
             if (typeof token === 'undefined' || token === null || token.length < 1) {
                 this._token = null;
             }
@@ -22,6 +25,9 @@ define(["require", "exports", "../bundles/core", "../api/services/general/Authen
         }
         ApiService.prototype.getToken = function () {
             return this._token;
+        };
+        ApiService.prototype.initializeCsrfToken = function () {
+            this._csrfToken = cookie_service_1.CookieService.getCookieStringValue(this._csrfTokenCookieName);
         };
         ApiService.prototype.login = function (userName, password) {
             var _this = this;
@@ -55,7 +61,7 @@ define(["require", "exports", "../bundles/core", "../api/services/general/Authen
             if (this._baseUrl === null) {
                 return Promise.reject("No Cityworks URL is set. URL must be set in the constructor.");
             }
-            return http.post(this._baseUrl + 'Services/' + url, this._token, data);
+            return http.post(this._baseUrl + 'Services/' + url, this._token, this._csrfToken || undefined, this._csrfHeaderName, data);
         };
         return ApiService;
     }());

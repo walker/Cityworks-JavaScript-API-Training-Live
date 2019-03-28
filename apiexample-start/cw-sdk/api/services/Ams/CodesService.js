@@ -5,7 +5,7 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     }
     Object.defineProperty(exports, "__esModule", { value: true });
     __export(api_service_1);
-    var CodesService = (function () {
+    var CodesService = /** @class */ (function () {
         function CodesService(service) {
             this._service = service;
         }
@@ -20,6 +20,15 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         CodesService.prototype.ByCodeType = function (request) {
             return this._service.call(request, 'Ams/Codes/ByCodeType');
+        };
+        CodesService.prototype.Export = function (request) {
+            return this._service.call(request, 'Ams/Codes/Export');
+        };
+        CodesService.prototype.ExportCCTVCodeDescScore = function (request) {
+            return this._service.call(request, 'Ams/Codes/ExportCCTVCodeDescScore');
+        };
+        CodesService.prototype.ExportDescScore = function (request) {
+            return this._service.call(request, 'Ams/Codes/ExportDescScore');
         };
         CodesService.prototype.Import = function (request) {
             return this._service.call(request, 'Ams/Codes/Import');

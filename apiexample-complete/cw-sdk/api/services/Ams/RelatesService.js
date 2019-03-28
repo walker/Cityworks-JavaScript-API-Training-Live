@@ -5,10 +5,13 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     }
     Object.defineProperty(exports, "__esModule", { value: true });
     __export(api_service_1);
-    var RelatesService = (function () {
+    var RelatesService = /** @class */ (function () {
         function RelatesService(service) {
             this._service = service;
         }
+        RelatesService.prototype.ByTableName = function (request) {
+            return this._service.call(request, 'Ams/Relates/ByTableName');
+        };
         RelatesService.prototype.EquipChangeOutChangedBy = function (request) {
             return this._service.call(request, 'Ams/Relates/EquipChangeOutChangedBy');
         };
@@ -29,6 +32,12 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         RelatesService.prototype.InspectionSubmitTo = function (request) {
             return this._service.call(request, 'Ams/Relates/InspectionSubmitTo');
+        };
+        RelatesService.prototype.ProblemLeafDispatchTo = function (request) {
+            return this._service.call(request, 'Ams/Relates/ProblemLeafDispatchTo');
+        };
+        RelatesService.prototype.ProblemLeafSubmitTo = function (request) {
+            return this._service.call(request, 'Ams/Relates/ProblemLeafSubmitTo');
         };
         RelatesService.prototype.ProjectApprovedBy = function (request) {
             return this._service.call(request, 'Ams/Relates/ProjectApprovedBy');
@@ -60,8 +69,14 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         RelatesService.prototype.SearchViewCost = function (request) {
             return this._service.call(request, 'Ams/Relates/SearchViewCost');
         };
+        RelatesService.prototype.TableFields = function (request) {
+            return this._service.call(request, 'Ams/Relates/TableFields');
+        };
         RelatesService.prototype.TaskAssignTo = function (request) {
             return this._service.call(request, 'Ams/Relates/TaskAssignTo');
+        };
+        RelatesService.prototype.TransferRequestedBy = function (request) {
+            return this._service.call(request, 'Ams/Relates/TransferRequestedBy');
         };
         RelatesService.prototype.WorkOrderCancelledBy = function (request) {
             return this._service.call(request, 'Ams/Relates/WorkOrderCancelledBy');

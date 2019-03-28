@@ -5,12 +5,15 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     }
     Object.defineProperty(exports, "__esModule", { value: true });
     __export(api_service_1);
-    var WorkOrderTemplateService = (function () {
+    var WorkOrderTemplateService = /** @class */ (function () {
         function WorkOrderTemplateService(service) {
             this._service = service;
         }
         WorkOrderTemplateService.prototype.ByIds = function (request) {
             return this._service.call(request, 'Ams/WorkOrderTemplate/ByIds');
+        };
+        WorkOrderTemplateService.prototype.ByProblemSids = function (request) {
+            return this._service.call(request, 'Ams/WorkOrderTemplate/ByProblemSids');
         };
         WorkOrderTemplateService.prototype.CustomFields = function (request) {
             return this._service.call(request, 'Ams/WorkOrderTemplate/CustomFields');

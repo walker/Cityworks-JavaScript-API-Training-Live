@@ -22,6 +22,7 @@ export namespace CasePeopleServiceTypes {
             PhoneWorkExt?: string;
             RoleId?: number;
             StateCode?: string;
+            ViewInPA?: boolean;
             WebSiteUrl?: string;
             ZipCode?: string;
         }
@@ -56,11 +57,11 @@ export namespace CasePeopleServiceTypes {
         }
     }
     export namespace Responses {
-        export interface Add extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.CaPeopleItemBase> {}
-        export interface ByCaObjectId extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.CaPeopleItemBase[]> {}
-        export interface Delete extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.CaPeopleItemBase> {}
-        export interface DeleteByCaObjectId extends ServiceTypes.CoreResponseBase_obsolete_<number> {}
-        export interface Search extends ServiceTypes.CoreResponseBase_obsolete_<number[]> {}
+        export interface Add extends ServiceTypes.CoreResponseBase_<CoreTypes.CaPeopleItemBase> {}
+        export interface ByCaObjectId extends ServiceTypes.CoreResponseBase_<CoreTypes.CaPeopleItemBase[]> {}
+        export interface Delete extends ServiceTypes.CoreResponseBase_<CoreTypes.CaPeopleItemBase> {}
+        export interface DeleteByCaObjectId extends ServiceTypes.CoreResponseBase_<number> {}
+        export interface Search extends ServiceTypes.CoreResponseBase_<number[]> {}
     }
     export interface ICasePeopleService {
         Add?: (request: Requests.Add) => AbortablePromise<Responses.Add>;

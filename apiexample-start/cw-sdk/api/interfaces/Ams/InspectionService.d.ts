@@ -42,6 +42,7 @@ export namespace InspectionServiceTypes {
             Entity?: CoreTypes.WorkOrderEntity;
             EntityType: string;
             GetGisData?: boolean;
+            InitiateDate?: Date;
             InitiatedByApp?: string;
             InitiatedBySid?: number;
             InspTemplateId: number;
@@ -55,6 +56,7 @@ export namespace InspectionServiceTypes {
             Priority?: string;
             PrjStartDate?: Date;
             Shop?: string;
+            Status?: string;
             StreetName?: string;
             SubmitToEmployeeSid?: number;
             Text1?: string;
@@ -80,6 +82,7 @@ export namespace InspectionServiceTypes {
             Entity?: CoreTypes.WorkOrderEntity;
             EntityType: string;
             GetGisData?: boolean;
+            InitiateDate?: Date;
             InitiatedByApp?: string;
             InitiatedBySid?: number;
             InspectionId?: number;
@@ -89,6 +92,7 @@ export namespace InspectionServiceTypes {
             Num3?: number;
             Num4?: number;
             Num5?: number;
+            Status?: string;
             SubmitToEmployeeSid?: number;
             Text1?: string;
             Text10?: string;
@@ -110,6 +114,7 @@ export namespace InspectionServiceTypes {
             Entity?: CoreTypes.WorkOrderEntity;
             EntityType: string;
             GetGisData?: boolean;
+            InitiateDate?: Date;
             InitiatedByApp?: string;
             InitiatedBySid?: number;
             InspTemplateId: number;
@@ -119,6 +124,7 @@ export namespace InspectionServiceTypes {
             Num4?: number;
             Num5?: number;
             RequestId: number;
+            Status?: string;
             SubmitToEmployeeSid?: number;
             Text1?: string;
             Text10?: string;
@@ -140,6 +146,7 @@ export namespace InspectionServiceTypes {
             Entity?: CoreTypes.WorkOrderEntity;
             EntityType: string;
             GetGisData?: boolean;
+            InitiateDate?: Date;
             InitiatedByApp?: string;
             InitiatedBySid?: number;
             InspTemplateId: number;
@@ -149,6 +156,7 @@ export namespace InspectionServiceTypes {
             Num4?: number;
             Num5?: number;
             ProjectedStartDate?: Date;
+            Status?: string;
             SubmitToEmployeeSid?: number;
             Text1?: string;
             Text10?: string;
@@ -279,6 +287,7 @@ export namespace InspectionServiceTypes {
             EffortMinValue?: number;
             EffortRangeType?: number;
             EffortValues?: number[];
+            EnableEurl?: boolean;
             EntitySidIncludeNulls?: boolean;
             EntitySidIsMaxValueExclusive?: boolean;
             EntitySidIsMinValueExclusive?: boolean;
@@ -411,6 +420,9 @@ export namespace InspectionServiceTypes {
             RequestId?: number[];
             RequestIdIsInList?: boolean;
             Resolution?: string[];
+            SaveDefinition?: boolean;
+            SearchName?: string;
+            SharedWithin?: number;
             Shop?: string[];
             Status?: string[];
             StreetName?: string[];
@@ -462,6 +474,10 @@ export namespace InspectionServiceTypes {
         }
         export interface QA extends ServiceTypes.CoreRequestBase {
             InspTemplateId: number;
+        }
+        export interface Questions extends ServiceTypes.CoreRequestBase {
+            InspectionId: number;
+            InspectionIds: number[];
         }
         export interface RemoveEntity extends ServiceTypes.CoreRequestBase {
             InspectionIds: number[];
@@ -778,6 +794,7 @@ export namespace InspectionServiceTypes {
             Effort?: number;
             ForemanRecomnd?: string;
             FromDate?: Date;
+            InitiateDate?: Date;
             InitiatedByApp?: string;
             InspectedBy?: number;
             InspectedBySid?: number;
@@ -842,6 +859,7 @@ export namespace InspectionServiceTypes {
         export interface Move extends ServiceTypes.CoreResponseBase_<CoreTypes.GISPoint> {}
         export interface Priorities extends ServiceTypes.CoreResponseBase_<CoreTypes.CodeDesc[]> {}
         export interface QA extends ServiceTypes.CoreResponseBase_<CoreTypes.InspTemplateQA> {}
+        export interface Questions extends ServiceTypes.CoreResponseBase_<CoreTypes.InspQuestion[]> {}
         export interface RemoveEntity extends ServiceTypes.CoreResponseBase_<{[key: number]: boolean}> {}
         export interface Resolutions extends ServiceTypes.CoreResponseBase_<CoreTypes.CodeDesc[]> {}
         export interface Search extends ServiceTypes.CoreResponseBase_<number[]> {}
@@ -875,6 +893,7 @@ export namespace InspectionServiceTypes {
         Move?: (request: Requests.Move) => AbortablePromise<Responses.Move>;
         Priorities?: (request: Requests.Priorities) => AbortablePromise<Responses.Priorities>;
         QA?: (request: Requests.QA) => AbortablePromise<Responses.QA>;
+        Questions?: (request: Requests.Questions) => AbortablePromise<Responses.Questions>;
         RemoveEntity?: (request: Requests.RemoveEntity) => AbortablePromise<Responses.RemoveEntity>;
         Resolutions?: (request: Requests.Resolutions) => AbortablePromise<Responses.Resolutions>;
         Search?: (request: Requests.Search) => AbortablePromise<Responses.Search>;

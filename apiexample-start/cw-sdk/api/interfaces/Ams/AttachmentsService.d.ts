@@ -4,6 +4,7 @@ import AbortablePromise = PromiseTypes.AbortablePromise;
 export namespace AttachmentsServiceTypes { 
     export namespace Requests {
         export interface AddInspectionAttachment extends ServiceTypes.CoreRequestBase {
+            AttachmentType?: number;
             Comments?: string;
             Filename?: string;
             InspectionId: number;

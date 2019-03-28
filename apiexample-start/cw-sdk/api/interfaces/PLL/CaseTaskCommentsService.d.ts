@@ -27,7 +27,7 @@ export namespace CaseTaskCommentsServiceTypes {
         export interface Add extends ServiceTypes.CoreResponseBase_<CoreTypes.CaTaskCommentsItemBase> {}
         export interface ByCaTaskId extends ServiceTypes.CoreResponseBase_<CoreTypes.CommentRecord[]> {}
         export interface ByCaTaskIds extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.CaTaskCommentsItemBase[]> {}
-        export interface Delete extends ServiceTypes.CoreResponseBase {}
+        export interface Delete extends ServiceTypes.CoreResponseBase_<{[key: number]: boolean}> {}
         export interface Update extends ServiceTypes.CoreResponseBase_<CoreTypes.CaTaskCommentsItemBase> {}
     }
     export interface ICaseTaskCommentsService {

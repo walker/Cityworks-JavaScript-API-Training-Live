@@ -19,9 +19,11 @@ export namespace CaseTaskServiceTypes {
         }
         export interface ByCaObjectId extends ServiceTypes.CoreRequestBase {
             CaObjectId: number;
+            CheckRelatedItems?: boolean;
         }
         export interface ByIds extends ServiceTypes.CoreRequestBase {
             CaTaskIds?: number[];
+            CheckRelatedItems?: boolean;
         }
         export interface Delete extends ServiceTypes.CoreRequestBase {
             CaTaskId: number;

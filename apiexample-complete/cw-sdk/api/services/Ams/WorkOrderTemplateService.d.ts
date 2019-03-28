@@ -11,6 +11,7 @@ export declare class WorkOrderTemplateService implements IWorkOrderTemplateServi
     private _service;
     constructor(service: IApiService);
     ByIds(request: Requests.ByIds): AbortablePromise<Responses.ByIds>;
+    ByProblemSids(request: Requests.ByProblemSids): AbortablePromise<Responses.ByProblemSids>;
     CustomFields(request: Requests.CustomFields): AbortablePromise<Responses.CustomFields>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
     TemplateInspections(request: Requests.TemplateInspections): AbortablePromise<Responses.TemplateInspections>;

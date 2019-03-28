@@ -10,6 +10,8 @@ export * from '../../interfaces/Ams/SecurityService';
 export declare class SecurityService implements ISecurityService {
     private _service;
     constructor(service: IApiService);
+    Contract(request: Requests.Contract): AbortablePromise<Responses.Contract>;
+    Contracts(request: Requests.Contracts): AbortablePromise<Responses.Contracts>;
     Inspection(request: Requests.Inspection): AbortablePromise<Responses.Inspection>;
     Inspections(request: Requests.Inspections): AbortablePromise<Responses.Inspections>;
     InspectionTemplate(request: Requests.InspectionTemplate): AbortablePromise<Responses.InspectionTemplate>;

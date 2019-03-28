@@ -11,8 +11,6 @@ export declare class CaseRelDocsService implements ICaseRelDocsService {
     private _service;
     constructor(service: IApiService);
     Add(request: Requests.Add): AbortablePromise<Responses.Add>;
-    AddCaseAttachmentsToDataBase(request: Requests.AddCaseAttachmentsToDataBase): AbortablePromise<Responses.Add>;
-    AddCaseAttachmentToFileSystem(request: Requests.AddCaseAttachmentToFileSystem): AbortablePromise<Responses.Add>;
     ByCaObjectId(request: Requests.ByCaObjectId): AbortablePromise<Responses.ByCaObjectId>;
     Delete(request: Requests.Delete): AbortablePromise<Responses.Delete>;
     DeleteByCaObjectId(request: Requests.DeleteByCaObjectId): AbortablePromise<Responses.DeleteByCaObjectId>;

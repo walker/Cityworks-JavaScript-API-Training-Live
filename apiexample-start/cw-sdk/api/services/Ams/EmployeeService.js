@@ -5,12 +5,15 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     }
     Object.defineProperty(exports, "__esModule", { value: true });
     __export(api_service_1);
-    var EmployeeService = (function () {
+    var EmployeeService = /** @class */ (function () {
         function EmployeeService(service) {
             this._service = service;
         }
         EmployeeService.prototype.Add = function (request) {
             return this._service.call(request, 'Ams/Employee/Add');
+        };
+        EmployeeService.prototype.AddLicensedItems = function (request) {
+            return this._service.call(request, 'Ams/Employee/AddLicensedItems');
         };
         EmployeeService.prototype.All = function (request) {
             return this._service.call(request, 'Ams/Employee/All');
@@ -23,6 +26,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         EmployeeService.prototype.Delete = function (request) {
             return this._service.call(request, 'Ams/Employee/Delete');
+        };
+        EmployeeService.prototype.DeleteLicensedItems = function (request) {
+            return this._service.call(request, 'Ams/Employee/DeleteLicensedItems');
         };
         EmployeeService.prototype.NamesAreUnique = function (request) {
             return this._service.call(request, 'Ams/Employee/NamesAreUnique');

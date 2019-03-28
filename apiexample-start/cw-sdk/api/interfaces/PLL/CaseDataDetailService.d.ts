@@ -6,6 +6,7 @@ export namespace CaseDataDetailServiceTypes {
         export interface Add extends ServiceTypes.CoreRequestBase {
             CaDataGroupId: number;
             CalcRateFlag?: string;
+            CaObjectId?: number;
             CaseDataDetailId: number;
             ColumnSequence?: string;
             CommentFlag?: string;

@@ -100,6 +100,7 @@ export namespace InboxServiceTypes {
             Header?: string;
             Height?: number;
             Id: number;
+            RefreshInterval?: number;
             Rows?: number;
             SearchId?: number;
             SearchType?: number;

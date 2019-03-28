@@ -5,7 +5,7 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     }
     Object.defineProperty(exports, "__esModule", { value: true });
     __export(api_service_1);
-    var InspectionService = (function () {
+    var InspectionService = /** @class */ (function () {
         function InspectionService(service) {
             this._service = service;
         }
@@ -74,6 +74,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         InspectionService.prototype.QA = function (request) {
             return this._service.call(request, 'Ams/Inspection/QA');
+        };
+        InspectionService.prototype.Questions = function (request) {
+            return this._service.call(request, 'Ams/Inspection/Questions');
         };
         InspectionService.prototype.RemoveEntity = function (request) {
             return this._service.call(request, 'Ams/Inspection/RemoveEntity');

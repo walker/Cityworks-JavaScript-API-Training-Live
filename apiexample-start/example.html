@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-
 <html>
 
 <head>
@@ -34,13 +33,13 @@
 				<h2>Create Work Order</h2>
 				<div class="form-group">
 					<label class="control-label" for="entity-group">Entity Group:</label>
-					<select id="entity-group" class="form-control" onchange="onEntityGroupChange()"></select>
+					<select id="entity-group" class="form-control" onchange="entityTypes()"></select>
 
 					<label for="entity-type">Entity Type:</label>
-					<select id="entity-type" class="form-control"></select>
+					<select id="entity-type" class="form-control" onchange="workOrderTemplateSearch()"></select>
 
 					<label for="template-id">Template ID:</label>
-					<select id="template-id" class="form-control"></select>
+					<select id="template-id" class="form-control"><option value="0"></option></select>
 
 					<label for="street-name">Street Name:</label>
 					<input id="street-name" class="form-control" placeholder="Street Name" type="text" />
@@ -52,14 +51,13 @@
 					<input id="inspection-id" class="form-control" placeholder="Inspection ID" type="number" />
 				</div>
 			</form>
-			<button class="btn btn-default" onclick="create()">Create Work Order</button>
+			<button class="btn btn-default" onclick="workOrderCreate()">Create Work Order</button>
 		</div>
 
 		<div class="col-xs-6">
 			<h2>View Work Orders</h2>
 			<ul id="work-orders"></ul>
 			<button class="btn btn-default" onclick="workOrderSearch()">Refresh</button>
-			<p></p>
 			<input id="wo-number" class="form-control" placeholder="number of WO's" type="number" />
 		</div>
 	</div>
@@ -69,7 +67,7 @@
 			<h2>Inspections</h2>
 			<ul id="inspections"></ul>
 			<button class="btn btn-default" onclick="inspectionSearch()">Refresh</button>
-			<button class="btn btn-default" onclick="updateInspection()">Attach Inspection to Selected Work Order</button>
+			<button class="btn btn-default" onclick="activityLinkAdd()">Attach Inspection to Selected Work Order</button>
 		</div>
 
 		<div class="col-xs-6">

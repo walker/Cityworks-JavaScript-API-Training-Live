@@ -5,7 +5,7 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     }
     Object.defineProperty(exports, "__esModule", { value: true });
     __export(api_service_1);
-    var WorkOrderService = (function () {
+    var WorkOrderService = /** @class */ (function () {
         function WorkOrderService(service) {
             this._service = service;
         }
@@ -27,8 +27,14 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         WorkOrderService.prototype.Categories = function (request) {
             return this._service.call(request, 'Ams/WorkOrder/Categories');
         };
+        WorkOrderService.prototype.ChangeCustomFieldCategory = function (request) {
+            return this._service.call(request, 'Ams/WorkOrder/ChangeCustomFieldCategory');
+        };
         WorkOrderService.prototype.Close = function (request) {
             return this._service.call(request, 'Ams/WorkOrder/Close');
+        };
+        WorkOrderService.prototype.Combine = function (request) {
+            return this._service.call(request, 'Ams/WorkOrder/Combine');
         };
         WorkOrderService.prototype.Comments = function (request) {
             return this._service.call(request, 'Ams/WorkOrder/Comments');
@@ -87,6 +93,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         WorkOrderService.prototype.RemoveEntities = function (request) {
             return this._service.call(request, 'Ams/WorkOrder/RemoveEntities');
         };
+        WorkOrderService.prototype.ReOpen = function (request) {
+            return this._service.call(request, 'Ams/WorkOrder/ReOpen');
+        };
         WorkOrderService.prototype.Search = function (request) {
             return this._service.call(request, 'Ams/WorkOrder/Search');
         };
@@ -113,6 +122,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         WorkOrderService.prototype.Templates = function (request) {
             return this._service.call(request, 'Ams/WorkOrder/Templates');
+        };
+        WorkOrderService.prototype.Uncancel = function (request) {
+            return this._service.call(request, 'Ams/WorkOrder/Uncancel');
         };
         WorkOrderService.prototype.UnlinkInspections = function (request) {
             return this._service.call(request, 'Ams/WorkOrder/UnlinkInspections');

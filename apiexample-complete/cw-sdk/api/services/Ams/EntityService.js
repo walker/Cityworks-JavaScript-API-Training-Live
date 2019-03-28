@@ -5,7 +5,7 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     }
     Object.defineProperty(exports, "__esModule", { value: true });
     __export(api_service_1);
-    var EntityService = (function () {
+    var EntityService = /** @class */ (function () {
         function EntityService(service) {
             this._service = service;
         }
@@ -39,8 +39,17 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         EntityService.prototype.CostTotal = function (request) {
             return this._service.call(request, 'Ams/Entity/CostTotal');
         };
+        EntityService.prototype.DistinctValues = function (request) {
+            return this._service.call(request, 'Ams/Entity/DistinctValues');
+        };
+        EntityService.prototype.DomainTypes = function (request) {
+            return this._service.call(request, 'Ams/Entity/DomainTypes');
+        };
         EntityService.prototype.EntityUidField = function (request) {
             return this._service.call(request, 'Ams/Entity/EntityUidField');
+        };
+        EntityService.prototype.FiveNumberSummary = function (request) {
+            return this._service.call(request, 'Ams/Entity/FiveNumberSummary');
         };
         EntityService.prototype.Groups = function (request) {
             return this._service.call(request, 'Ams/Entity/Groups');
@@ -50,6 +59,21 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         EntityService.prototype.RemoveAlias = function (request) {
             return this._service.call(request, 'Ams/Entity/RemoveAlias');
+        };
+        EntityService.prototype.Search = function (request) {
+            return this._service.call(request, 'Ams/Entity/Search');
+        };
+        EntityService.prototype.SearchAsWorkOrderEntity = function (request) {
+            return this._service.call(request, 'Ams/Entity/SearchAsWorkOrderEntity');
+        };
+        EntityService.prototype.SplitEntities = function (request) {
+            return this._service.call(request, 'Ams/Entity/SplitEntities');
+        };
+        EntityService.prototype.Splits = function (request) {
+            return this._service.call(request, 'Ams/Entity/Splits');
+        };
+        EntityService.prototype.SubTypes = function (request) {
+            return this._service.call(request, 'Ams/Entity/SubTypes');
         };
         EntityService.prototype.TypeRelationships = function (request) {
             return this._service.call(request, 'Ams/Entity/TypeRelationships');

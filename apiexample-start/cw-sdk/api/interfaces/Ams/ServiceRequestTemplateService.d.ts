@@ -57,6 +57,9 @@ export namespace ServiceRequestTemplateServiceTypes {
             QAModel?: number[];
             ReqCustFieldCatId?: number[];
             ReqCustFieldCatIdIsInList?: boolean;
+            SaveDefinition?: boolean;
+            SearchName?: string;
+            SharedWithin?: number;
             SRPrintTmpt?: string[];
             SubmitTo?: number[];
             SubmitToIsInList?: boolean;

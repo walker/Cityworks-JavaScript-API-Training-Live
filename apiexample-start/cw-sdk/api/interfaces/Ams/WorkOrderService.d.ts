@@ -26,8 +26,17 @@ export namespace WorkOrderServiceTypes {
         }
         export interface Categories extends ServiceTypes.CoreRequestBase {
         }
+        export interface ChangeCustomFieldCategory extends ServiceTypes.CoreRequestBase {
+            CategoryId: number;
+            WorkOrderIds: string[];
+        }
         export interface Close extends ServiceTypes.CoreRequestBase {
             WorkOrderIds: string[];
+        }
+        export interface Combine extends ServiceTypes.CoreRequestBase {
+            CancelCombinedWorkOrders?: boolean;
+            FromWorkOrderIds: string[];
+            ToWorkOrderId: string;
         }
         export interface Comments extends ServiceTypes.CoreRequestBase {
             WorkOrderId: string;
@@ -51,8 +60,10 @@ export namespace WorkOrderServiceTypes {
             ExpenseType?: string;
             GetGisData?: boolean;
             GroupEntities?: boolean;
+            InitiateDate?: Date;
             InitiatedByApp?: string;
             InitiatedBySid?: number;
+            InspectionIds?: number[];
             Instructions?: string;
             Location?: string;
             MapPage?: string;
@@ -63,9 +74,11 @@ export namespace WorkOrderServiceTypes {
             Num5?: number;
             Priority?: string;
             ProjectedStartDate?: Date;
+            ProjectSid?: number;
             Reactive?: boolean;
             RequestedBy?: number;
             RequestedBySid?: number;
+            RequestIds?: number[];
             Shop?: string;
             Stage?: string;
             Status?: string;
@@ -96,6 +109,7 @@ export namespace WorkOrderServiceTypes {
             Text9?: string;
             TileNo?: string;
             WebServiceRequestId?: string;
+            WOCustFieldCatId?: number;
             WOTemplateId: string;
             X?: number;
             Y?: number;
@@ -115,6 +129,7 @@ export namespace WorkOrderServiceTypes {
             ExpenseType?: string;
             GetGisData?: boolean;
             GroupEntities?: boolean;
+            InitiateDate?: Date;
             InitiatedByApp?: string;
             InitiatedBySid?: number;
             InspectionId: number;
@@ -127,6 +142,7 @@ export namespace WorkOrderServiceTypes {
             Num5?: number;
             Priority?: string;
             ProjectedStartDate?: Date;
+            ProjectSid?: number;
             Reactive?: boolean;
             RequestedBy?: number;
             RequestedBySid?: number;
@@ -157,6 +173,7 @@ export namespace WorkOrderServiceTypes {
             Text8?: string;
             Text9?: string;
             WebServiceRequestId?: string;
+            WOCustFieldCatId?: number;
             WOTemplateId: string;
         }
         export interface CreateFromParent extends ServiceTypes.CoreRequestBase {
@@ -173,6 +190,7 @@ export namespace WorkOrderServiceTypes {
             ExpenseType?: string;
             GetGisData?: boolean;
             GroupEntities?: boolean;
+            InitiateDate?: Date;
             InitiatedByApp?: string;
             InitiatedBySid?: number;
             Instructions?: string;
@@ -184,6 +202,7 @@ export namespace WorkOrderServiceTypes {
             Num5?: number;
             Priority?: string;
             ProjectedStartDate?: Date;
+            ProjectSid?: number;
             Reactive?: boolean;
             RequestedBy?: number;
             RequestedBySid?: number;
@@ -214,6 +233,7 @@ export namespace WorkOrderServiceTypes {
             Text8?: string;
             Text9?: string;
             WebServiceRequestId?: string;
+            WOCustFieldCatId?: number;
             WorkOrderId: string;
             WOTemplateId: string;
         }
@@ -231,6 +251,7 @@ export namespace WorkOrderServiceTypes {
             ExpenseType?: string;
             GetGisData?: boolean;
             GroupEntities?: boolean;
+            InitiateDate?: Date;
             InitiatedByApp?: string;
             InitiatedBySid?: number;
             Instructions?: string;
@@ -242,6 +263,7 @@ export namespace WorkOrderServiceTypes {
             Num5?: number;
             Priority?: string;
             ProjectedStartDate?: Date;
+            ProjectSid?: number;
             Reactive?: boolean;
             RequestedBy?: number;
             RequestedBySid?: number;
@@ -273,6 +295,7 @@ export namespace WorkOrderServiceTypes {
             Text8?: string;
             Text9?: string;
             WebServiceRequestId?: string;
+            WOCustFieldCatId?: number;
             WOTemplateId: string;
         }
         export interface CreateSearchDefinition extends ServiceTypes.CoreRequestBase {
@@ -415,6 +438,7 @@ export namespace WorkOrderServiceTypes {
             EffortMinValue?: number;
             EffortRangeType?: number;
             EffortValues?: number[];
+            EnableEurl?: boolean;
             EntityType?: string;
             EntityUids?: string[];
             ExpenseType?: number[];
@@ -514,6 +538,7 @@ export namespace WorkOrderServiceTypes {
             RequestedBySid?: number[];
             RequestedBySidIsInList?: boolean;
             Resolution?: string[];
+            SaveDefinition?: boolean;
             ScheduleDateBegin?: Date;
             ScheduleDateEnd?: Date;
             ScheduleDateIsNull?: boolean;
@@ -522,6 +547,8 @@ export namespace WorkOrderServiceTypes {
             ScheduleDateRangeLast?: number;
             ScheduleDateRangeNext?: number;
             ScheduleDateRangeUnits?: number;
+            SearchName?: string;
+            SharedWithin?: number;
             Shop?: string[];
             SourceWOId?: string[];
             Stage?: number[];
@@ -670,6 +697,9 @@ export namespace WorkOrderServiceTypes {
             ObjectIds?: number[];
             UpdateXY?: boolean;
             WorkOrderId: string;
+        }
+        export interface ReOpen extends ServiceTypes.CoreRequestBase {
+            WorkOrderIds: string[];
         }
         export interface Search extends ServiceTypes.CoreRequestBase {
             AcctNum?: string[];
@@ -1052,6 +1082,9 @@ export namespace WorkOrderServiceTypes {
             EntityTypes: string[];
             WOTemplateIds?: string[];
         }
+        export interface Uncancel extends ServiceTypes.CoreRequestBase {
+            WorkOrderIds: string[];
+        }
         export interface UnlinkInspections extends ServiceTypes.CoreRequestBase {
             InspectionIds?: number[];
             WorkOrderId: string;
@@ -1094,6 +1127,7 @@ export namespace WorkOrderServiceTypes {
             InitiateDate?: Date;
             InitiatedByApp?: string;
             InitiatedBySid?: number;
+            InspectionIds?: number[];
             Instructions?: string;
             LegalBillable?: boolean;
             Location?: string;
@@ -1110,6 +1144,7 @@ export namespace WorkOrderServiceTypes {
             ProjectedStartDate?: Date;
             Reactive?: boolean;
             RequestedBySid?: number;
+            RequestIds?: number[];
             Resolution?: string;
             ScheduleDate?: Date;
             Shop?: string;
@@ -1150,6 +1185,7 @@ export namespace WorkOrderServiceTypes {
             UnitsAccomplishedDescription?: string;
             UpdateMap?: boolean;
             WOCategory?: string;
+            WOCustFieldCatId?: number;
             WorkOrderId: string;
             WOTemplateId?: string;
         }
@@ -1177,7 +1213,9 @@ export namespace WorkOrderServiceTypes {
         export interface ByIds extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderBase[]> {}
         export interface Cancel extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderBase[]> {}
         export interface Categories extends ServiceTypes.CoreResponseBase_<CoreTypes.CodeDesc[]> {}
+        export interface ChangeCustomFieldCategory extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderBase[]> {}
         export interface Close extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderBase[]> {}
+        export interface Combine extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderBase[]> {}
         export interface Comments extends ServiceTypes.CoreResponseBase_<string> {}
         export interface CommentsByWorkOrderIds extends ServiceTypes.CoreResponseBase_<{[key: string]: string}> {}
         export interface Create extends ServiceTypes.CoreResponseVerified_<CoreTypes.WorkOrderBase[]> {}
@@ -1197,6 +1235,7 @@ export namespace WorkOrderServiceTypes {
         export interface Move extends ServiceTypes.CoreResponseBase_<CoreTypes.GISPoint> {}
         export interface Priorities extends ServiceTypes.CoreResponseBase_<CoreTypes.CodeDesc[]> {}
         export interface RemoveEntities extends ServiceTypes.CoreResponseBase_<string[]> {}
+        export interface ReOpen extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderBase[]> {}
         export interface Search extends ServiceTypes.CoreResponseBase_<string[]> {}
         export interface SearchObject extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderBase[]> {}
         export interface Stages extends ServiceTypes.CoreResponseBase_<{[key: string]: string}> {}
@@ -1206,6 +1245,7 @@ export namespace WorkOrderServiceTypes {
         export interface Template extends ServiceTypes.CoreResponseBase_<CoreTypes.WOTemplateBase> {}
         export interface TemplateCustomFields extends ServiceTypes.CoreResponseBase_<CoreTypes.CategoryCustField[]> {}
         export interface Templates extends ServiceTypes.CoreResponseBase_<CoreTypes.WOTemplateName[]> {}
+        export interface Uncancel extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderBase[]> {}
         export interface UnlinkInspections extends ServiceTypes.CoreResponseBase_<number[]> {}
         export interface UnlinkServiceRequests extends ServiceTypes.CoreResponseBase_<number[]> {}
         export interface Update extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderBase> {}
@@ -1221,7 +1261,9 @@ export namespace WorkOrderServiceTypes {
         ByIds?: (request: Requests.ByIds) => AbortablePromise<Responses.ByIds>;
         Cancel?: (request: Requests.Cancel) => AbortablePromise<Responses.Cancel>;
         Categories?: (request: Requests.Categories) => AbortablePromise<Responses.Categories>;
+        ChangeCustomFieldCategory?: (request: Requests.ChangeCustomFieldCategory) => AbortablePromise<Responses.ChangeCustomFieldCategory>;
         Close?: (request: Requests.Close) => AbortablePromise<Responses.Close>;
+        Combine?: (request: Requests.Combine) => AbortablePromise<Responses.Combine>;
         Comments?: (request: Requests.Comments) => AbortablePromise<Responses.Comments>;
         CommentsByWorkOrderIds?: (request: Requests.CommentsByWorkOrderIds) => AbortablePromise<Responses.CommentsByWorkOrderIds>;
         Create?: (request: Requests.Create) => AbortablePromise<Responses.Create>;
@@ -1241,6 +1283,7 @@ export namespace WorkOrderServiceTypes {
         Move?: (request: Requests.Move) => AbortablePromise<Responses.Move>;
         Priorities?: (request: Requests.Priorities) => AbortablePromise<Responses.Priorities>;
         RemoveEntities?: (request: Requests.RemoveEntities) => AbortablePromise<Responses.RemoveEntities>;
+        ReOpen?: (request: Requests.ReOpen) => AbortablePromise<Responses.ReOpen>;
         Search?: (request: Requests.Search) => AbortablePromise<Responses.Search>;
         SearchObject?: (request: Requests.SearchObject) => AbortablePromise<Responses.SearchObject>;
         Stages?: (request: Requests.Stages) => AbortablePromise<Responses.Stages>;
@@ -1250,6 +1293,7 @@ export namespace WorkOrderServiceTypes {
         Template?: (request: Requests.Template) => AbortablePromise<Responses.Template>;
         TemplateCustomFields?: (request: Requests.TemplateCustomFields) => AbortablePromise<Responses.TemplateCustomFields>;
         Templates?: (request: Requests.Templates) => AbortablePromise<Responses.Templates>;
+        Uncancel?: (request: Requests.Uncancel) => AbortablePromise<Responses.Uncancel>;
         UnlinkInspections?: (request: Requests.UnlinkInspections) => AbortablePromise<Responses.UnlinkInspections>;
         UnlinkServiceRequests?: (request: Requests.UnlinkServiceRequests) => AbortablePromise<Responses.UnlinkServiceRequests>;
         Update?: (request: Requests.Update) => AbortablePromise<Responses.Update>;

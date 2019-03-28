@@ -12,6 +12,13 @@ export namespace CodesServiceTypes {
         export interface ByCodeType extends ServiceTypes.CoreRequestBase {
             CodeTypes?: string[];
         }
+        export interface Export extends ServiceTypes.CoreRequestBase {
+            CodeTypes?: string[];
+        }
+        export interface ExportCCTVCodeDescScore extends ServiceTypes.CoreRequestBase {
+        }
+        export interface ExportDescScore extends ServiceTypes.CoreRequestBase {
+        }
         export interface Import extends ServiceTypes.CoreRequestBase {
             Codes?: CoreTypes.CodeDesc[];
             DeleteExisting?: boolean;
@@ -30,6 +37,7 @@ export namespace CodesServiceTypes {
         export interface AllCCTVCodeDescScore extends ServiceTypes.CoreResponseBase_<CoreTypes.CodeDescScore[]> {}
         export interface AllDescScore extends ServiceTypes.CoreResponseBase_<CoreTypes.DescScore[]> {}
         export interface ByCodeType extends ServiceTypes.CoreResponseBase_<{[key: string]: CoreTypes.CodeDesc[]}> {}
+        export interface Export extends ServiceTypes.CoreResponseBase_<{[key: string]: Object}[]> {}
         export interface Import extends ServiceTypes.CoreResponseBase_<boolean> {}
         export interface ImportCCTVCodeDescScore extends ServiceTypes.CoreResponseBase_<boolean> {}
         export interface ImportDescScore extends ServiceTypes.CoreResponseBase_<boolean> {}
@@ -39,6 +47,9 @@ export namespace CodesServiceTypes {
         AllCCTVCodeDescScore?: (request: Requests.AllCCTVCodeDescScore) => AbortablePromise<Responses.AllCCTVCodeDescScore>;
         AllDescScore?: (request: Requests.AllDescScore) => AbortablePromise<Responses.AllDescScore>;
         ByCodeType?: (request: Requests.ByCodeType) => AbortablePromise<Responses.ByCodeType>;
+        Export?: (request: Requests.Export) => AbortablePromise<Responses.Export>;
+        ExportCCTVCodeDescScore?: (request: Requests.ExportCCTVCodeDescScore) => AbortablePromise<Responses.Export>;
+        ExportDescScore?: (request: Requests.ExportDescScore) => AbortablePromise<Responses.Export>;
         Import?: (request: Requests.Import) => AbortablePromise<Responses.Import>;
         ImportCCTVCodeDescScore?: (request: Requests.ImportCCTVCodeDescScore) => AbortablePromise<Responses.ImportCCTVCodeDescScore>;
         ImportDescScore?: (request: Requests.ImportDescScore) => AbortablePromise<Responses.ImportDescScore>;

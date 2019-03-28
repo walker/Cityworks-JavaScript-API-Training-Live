@@ -14,11 +14,14 @@ export namespace EmployeeServiceTypes {
             EmailReq?: string;
             EmployeeId?: string;
             FirstName?: string;
+            GroupIds?: number[];
             HolidayRate?: number;
             HolidayType?: number;
             HourlyRate?: number;
             IsActive?: boolean;
+            IsDomainAdmin?: boolean;
             LastName: string;
+            LicenseCodes?: string[];
             LoginName?: string;
             MapServiceId?: number;
             MiddleInitial?: string;
@@ -40,6 +43,10 @@ export namespace EmployeeServiceTypes {
             UniqueName?: string;
             WorkPhone?: string;
         }
+        export interface AddLicensedItems extends ServiceTypes.CoreRequestBase {
+            EmployeeSids: number[];
+            LicenseCodes: string[];
+        }
         export interface All extends ServiceTypes.CoreRequestBase {
             IncludeInactive?: boolean;
         }
@@ -51,6 +58,10 @@ export namespace EmployeeServiceTypes {
         }
         export interface Delete extends ServiceTypes.CoreRequestBase {
             EmployeeSids?: number[];
+        }
+        export interface DeleteLicensedItems extends ServiceTypes.CoreRequestBase {
+            EmployeeSids: number[];
+            LicenseCodes: string[];
         }
         export interface NamesAreUnique extends ServiceTypes.CoreRequestBase {
             Names?: string[];
@@ -112,20 +123,24 @@ export namespace EmployeeServiceTypes {
     }
     export namespace Responses {
         export interface Add extends ServiceTypes.CoreResponseBase_<CoreTypes.EmployeeBase> {}
+        export interface AddLicensedItems extends ServiceTypes.CoreResponseBase_<{[key: number]: boolean}> {}
         export interface All extends ServiceTypes.CoreResponseBase_<CoreTypes.EmployeeBase[]> {}
         export interface ById extends ServiceTypes.CoreResponseBase_<CoreTypes.EmployeeBase> {}
         export interface ByIds extends ServiceTypes.CoreResponseBase_<CoreTypes.EmployeeBase[]> {}
         export interface Delete extends ServiceTypes.CoreResponseBase_<{[key: number]: boolean}> {}
+        export interface DeleteLicensedItems extends ServiceTypes.CoreResponseBase_<{[key: number]: boolean}> {}
         export interface NamesAreUnique extends ServiceTypes.CoreResponseBase_<{[key: string]: boolean}> {}
         export interface Search extends ServiceTypes.CoreResponseBase_<number[]> {}
         export interface Update extends ServiceTypes.CoreResponseBase_<CoreTypes.EmployeeBase[]> {}
     }
     export interface IEmployeeService {
         Add?: (request: Requests.Add) => AbortablePromise<Responses.Add>;
+        AddLicensedItems?: (request: Requests.AddLicensedItems) => AbortablePromise<Responses.AddLicensedItems>;
         All?: (request: Requests.All) => AbortablePromise<Responses.All>;
         ById?: (request: Requests.ById) => AbortablePromise<Responses.ById>;
         ByIds?: (request: Requests.ByIds) => AbortablePromise<Responses.ByIds>;
         Delete?: (request: Requests.Delete) => AbortablePromise<Responses.Delete>;
+        DeleteLicensedItems?: (request: Requests.DeleteLicensedItems) => AbortablePromise<Responses.DeleteLicensedItems>;
         NamesAreUnique?: (request: Requests.NamesAreUnique) => AbortablePromise<Responses.NamesAreUnique>;
         Search?: (request: Requests.Search) => AbortablePromise<Responses.Search>;
         Update?: (request: Requests.Update) => AbortablePromise<Responses.Update>;

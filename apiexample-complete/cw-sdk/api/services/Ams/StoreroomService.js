@@ -5,7 +5,7 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     }
     Object.defineProperty(exports, "__esModule", { value: true });
     __export(api_service_1);
-    var StoreroomService = (function () {
+    var StoreroomService = /** @class */ (function () {
         function StoreroomService(service) {
             this._service = service;
         }
@@ -38,6 +38,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         StoreroomService.prototype.BuildAssemblyMaterial = function (request) {
             return this._service.call(request, 'Ams/Storeroom/BuildAssemblyMaterial');
+        };
+        StoreroomService.prototype.MaterialsByEmployeeSid = function (request) {
+            return this._service.call(request, 'Ams/Storeroom/MaterialsByEmployeeSid');
         };
         StoreroomService.prototype.RequisitionItems = function (request) {
             return this._service.call(request, 'Ams/Storeroom/RequisitionItems');

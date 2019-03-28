@@ -10,6 +10,7 @@ export * from '../../interfaces/Ams/RelatesService';
 export declare class RelatesService implements IRelatesService {
     private _service;
     constructor(service: IApiService);
+    ByTableName(request: Requests.ByTableName): AbortablePromise<Responses.ByTableName>;
     EquipChangeOutChangedBy(request: Requests.EquipChangeOutChangedBy): AbortablePromise<Responses.EmployeeRelates>;
     InspectionCancelledBy(request: Requests.InspectionCancelledBy): AbortablePromise<Responses.EmployeeRelates>;
     InspectionClosedBy(request: Requests.InspectionClosedBy): AbortablePromise<Responses.EmployeeRelates>;
@@ -17,6 +18,8 @@ export declare class RelatesService implements IRelatesService {
     InspectionInitiatedBy(request: Requests.InspectionInitiatedBy): AbortablePromise<Responses.EmployeeRelates>;
     InspectionInspectedBy(request: Requests.InspectionInspectedBy): AbortablePromise<Responses.EmployeeRelates>;
     InspectionSubmitTo(request: Requests.InspectionSubmitTo): AbortablePromise<Responses.EmployeeRelates>;
+    ProblemLeafDispatchTo(request: Requests.ProblemLeafDispatchTo): AbortablePromise<Responses.EmployeeRelates>;
+    ProblemLeafSubmitTo(request: Requests.ProblemLeafSubmitTo): AbortablePromise<Responses.EmployeeRelates>;
     ProjectApprovedBy(request: Requests.ProjectApprovedBy): AbortablePromise<Responses.EmployeeRelates>;
     ProjectAssignedTo(request: Requests.ProjectAssignedTo): AbortablePromise<Responses.EmployeeRelates>;
     ProjectInitiatedBy(request: Requests.ProjectInitiatedBy): AbortablePromise<Responses.EmployeeRelates>;
@@ -27,7 +30,9 @@ export declare class RelatesService implements IRelatesService {
     RequestInitiatedBy(request: Requests.RequestInitiatedBy): AbortablePromise<Responses.EmployeeRelates>;
     RequestSubmitTo(request: Requests.RequestSubmitTo): AbortablePromise<Responses.EmployeeRelates>;
     SearchViewCost(request: Requests.SearchViewCost): AbortablePromise<Responses.EmployeeRelates>;
+    TableFields(request: Requests.TableFields): AbortablePromise<Responses.TableFields>;
     TaskAssignTo(request: Requests.TaskAssignTo): AbortablePromise<Responses.EmployeeRelates>;
+    TransferRequestedBy(request: Requests.TransferRequestedBy): AbortablePromise<Responses.EmployeeRelates>;
     WorkOrderCancelledBy(request: Requests.WorkOrderCancelledBy): AbortablePromise<Responses.EmployeeRelates>;
     WorkOrderClosedBy(request: Requests.WorkOrderClosedBy): AbortablePromise<Responses.EmployeeRelates>;
     WorkOrderCompletedBy(request: Requests.WorkOrderCompletedBy): AbortablePromise<Responses.EmployeeRelates>;

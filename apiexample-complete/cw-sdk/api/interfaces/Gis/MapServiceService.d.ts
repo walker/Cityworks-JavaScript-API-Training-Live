@@ -17,6 +17,8 @@ export namespace MapServiceServiceTypes {
             MobileMapCacheId?: number;
         }
         export interface User extends ServiceTypes.CoreRequestBase {
+            AllDomains?: boolean;
+            AllGroups?: boolean;
             Security?: string[];
         }
     }

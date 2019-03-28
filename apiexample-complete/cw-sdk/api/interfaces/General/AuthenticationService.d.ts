@@ -4,6 +4,7 @@ import AbortablePromise = PromiseTypes.AbortablePromise;
 export namespace AuthenticationServiceTypes { 
     export namespace Requests {
         export interface Authenticate extends ServiceTypes.CoreRequestBase {
+            Expires?: number;
             LoginName: string;
             Password: string;
         }

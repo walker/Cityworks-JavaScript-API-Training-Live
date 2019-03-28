@@ -20,6 +20,7 @@ export declare class StoreroomService implements IStoreroomService {
     AddSupplierMaterial(request: Requests.AddSupplierMaterial): AbortablePromise<Responses.AddSupplierMaterial>;
     AddTransfer(request: Requests.AddTransfer): AbortablePromise<Responses.AddTransfer>;
     BuildAssemblyMaterial(request: Requests.BuildAssemblyMaterial): AbortablePromise<Responses.BuildAssemblyMaterial>;
+    MaterialsByEmployeeSid(request: Requests.MaterialsByEmployeeSid): AbortablePromise<Responses.MaterialsByEmployeeSid>;
     RequisitionItems(request: Requests.RequisitionItems): AbortablePromise<Responses.RequisitionItems>;
     Requisitions(request: Requests.Requisitions): AbortablePromise<Responses.Requisitions>;
     SearchSuppliersByUid(request: Requests.SearchSuppliersByUid): AbortablePromise<Responses.SearchSuppliersByUid>;

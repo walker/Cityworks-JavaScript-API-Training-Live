@@ -1,5 +1,5 @@
 # Cityworks-JavaScript-API-Training-Live
-Current Cityworks API training samples for the JavaScript SDK.
+Current Cityworks API training samples for the JavaScript SDK. This project uses the Cityworks 15.4 SDK for JavaScript.
 
 ## Folder Explanations
 The **apiexample-complete** folder contains a stand alone web app that is built using the JavaScript SDK. This app is complete and ready to turn into a Cityworks Plugin. This folder should be used as either reference while working on a duplicate of **apiexample-start** or to create a duplicate to make a plugin.

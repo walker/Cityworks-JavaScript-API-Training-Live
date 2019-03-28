@@ -27,8 +27,17 @@ export namespace ServiceRequestServiceTypes {
             DateCancelled?: Date;
             RequestIds: number[];
         }
+        export interface ChangeCustomFieldCategory extends ServiceTypes.CoreRequestBase {
+            CategoryId: number;
+            RequestIds: number[];
+        }
         export interface Close extends ServiceTypes.CoreRequestBase {
             RequestIds: number[];
+        }
+        export interface Combine extends ServiceTypes.CoreRequestBase {
+            CancelCombinedRequests?: boolean;
+            FromRequestIds: number[];
+            ToRequestId: number;
         }
         export interface Comments extends ServiceTypes.CoreRequestBase {
             RequestId: number;
@@ -42,11 +51,16 @@ export namespace ServiceRequestServiceTypes {
             AptNum?: string;
             CallerAcctNum?: string;
             CallerAddress?: string;
+            CallerAddressType?: string;
             CallerAptNum?: string;
+            CallerCallback?: boolean;
+            CallerCallbackTime?: Date;
             CallerCallTime?: Date;
             CallerCellPhone?: string;
             CallerCity?: string;
             CallerComments?: string;
+            CallerContact?: boolean;
+            CallerContactTime?: Date;
             CallerDistrict?: string;
             CallerEmail?: string;
             CallerFax?: string;
@@ -67,6 +81,7 @@ export namespace ServiceRequestServiceTypes {
             CallerType?: string;
             CallerWorkPhone?: string;
             CallerZip?: string;
+            CaseIds?: number[];
             City?: string;
             Comments?: string;
             CustomFieldValues?: {[key: number]: string};
@@ -75,12 +90,14 @@ export namespace ServiceRequestServiceTypes {
             Date3?: Date;
             Date4?: Date;
             Date5?: Date;
+            DateTimeInit?: Date;
             Details?: string;
             DispatchTo?: number;
             DispatchToSid?: number;
             District?: string;
             InitiatedByApp?: string;
             InitiatedBySid?: number;
+            InspectionIds?: number[];
             Landmark?: string;
             Location?: string;
             MapPage?: string;
@@ -92,8 +109,10 @@ export namespace ServiceRequestServiceTypes {
             OtherSystemId?: string;
             Priority?: string;
             ProblemSid: number;
+            ReqCustFieldCatId?: number;
             Shop?: string;
             State?: string;
+            Status?: string;
             StreetName?: string;
             SubmitTo?: number;
             SubmitToSid?: number;
@@ -118,6 +137,7 @@ export namespace ServiceRequestServiceTypes {
             Text8?: string;
             Text9?: string;
             TileNo?: string;
+            WorkOrderIds?: string[];
             X?: number;
             Y?: number;
             Zip?: string;
@@ -254,6 +274,7 @@ export namespace ServiceRequestServiceTypes {
             EffortMinValue?: number;
             EffortRangeType?: number;
             EffortValues?: number[];
+            EnableEurl?: boolean;
             Excursion?: boolean;
             Extent?: CoreTypes.GISExtent;
             FieldInvtDone?: boolean;
@@ -346,6 +367,9 @@ export namespace ServiceRequestServiceTypes {
             RequestIdIsInList?: boolean;
             RequestIds?: number[];
             Resolution?: string[];
+            SaveDefinition?: boolean;
+            SearchName?: string;
+            SharedWithin?: number;
             Shop?: string[];
             Status?: string[];
             StreetName?: string[];
@@ -388,6 +412,12 @@ export namespace ServiceRequestServiceTypes {
         export interface CustomFields extends ServiceTypes.CoreRequestBase {
             RequestIds: number[];
         }
+        export interface DefaultStatus extends ServiceTypes.CoreRequestBase {
+            DomainIds?: number[];
+        }
+        export interface DispatchTo extends ServiceTypes.CoreRequestBase {
+            DomainId: number;
+        }
         export interface LinkCases extends ServiceTypes.CoreRequestBase {
             CaseIds?: number[];
             RequestId: number;
@@ -399,6 +429,16 @@ export namespace ServiceRequestServiceTypes {
         export interface LinkWorkOrders extends ServiceTypes.CoreRequestBase {
             RequestId: number;
             WorkOrderIds?: string[];
+        }
+        export interface Move extends ServiceTypes.CoreRequestBase {
+            RequestId: number;
+            WKID?: number;
+            WKT?: string;
+            X: number;
+            Y: number;
+        }
+        export interface Priorities extends ServiceTypes.CoreRequestBase {
+            ProblemSids: number[];
         }
         export interface ProblemLeafByOtherSysCodeDescs extends ServiceTypes.CoreRequestBase {
             OtherSysCode: string;
@@ -417,10 +457,18 @@ export namespace ServiceRequestServiceTypes {
         }
         export interface Problems extends ServiceTypes.CoreRequestBase {
             DomainId?: number;
+            DomainIds?: number[];
             ForPublicOnly?: boolean;
+            OnlyActiveTemplates?: boolean;
+        }
+        export interface ProblemsByKeywords extends ServiceTypes.CoreRequestBase {
+            Keywords?: string[];
         }
         export interface QA extends ServiceTypes.CoreRequestBase {
             ProblemSid: number;
+        }
+        export interface Reopen extends ServiceTypes.CoreRequestBase {
+            RequestIds: number[];
         }
         export interface RequestInspections extends ServiceTypes.CoreRequestBase {
             RequestIds: number[];
@@ -693,8 +741,14 @@ export namespace ServiceRequestServiceTypes {
         }
         export interface Statuses extends ServiceTypes.CoreRequestBase {
         }
+        export interface SubmitTo extends ServiceTypes.CoreRequestBase {
+            DomainId: number;
+        }
         export interface TemplateCustomFields extends ServiceTypes.CoreRequestBase {
             ProblemSid: number;
+        }
+        export interface Uncancel extends ServiceTypes.CoreRequestBase {
+            RequestIds: number[];
         }
         export interface UnlinkInspections extends ServiceTypes.CoreRequestBase {
             InspectionIds?: number[];
@@ -706,7 +760,9 @@ export namespace ServiceRequestServiceTypes {
         }
         export interface Update extends ServiceTypes.CoreRequestBase {
             Address?: string;
+            CaseIds?: number[];
             Category?: string;
+            Comments?: string;
             CustomFieldValues?: {[key: number]: string};
             Date1?: Date;
             Date2?: Date;
@@ -715,6 +771,7 @@ export namespace ServiceRequestServiceTypes {
             Date5?: Date;
             DateInvtDone?: Date;
             Details?: string;
+            DispatchOpenBySid?: number;
             DispatchTo?: number;
             DispatchToDate?: Date;
             DispatchToSid?: number;
@@ -723,6 +780,7 @@ export namespace ServiceRequestServiceTypes {
             Emergency?: boolean;
             InitiatedByApp?: string;
             InitiatedDate?: Date;
+            InspectionIds?: number[];
             Investigation?: boolean;
             MapPage?: string;
             Num1?: number;
@@ -740,12 +798,14 @@ export namespace ServiceRequestServiceTypes {
             ProbZip?: string;
             ProjectedFinishDate?: Date;
             ProjectSid?: number;
+            ReqCustFieldCatId?: number;
             RequestId: number;
             Resolution?: string;
             Shop?: string;
             Status?: string;
             SubmitTo?: number;
             SubmitToDate?: Date;
+            SubmitToOpenBySid?: number;
             SubmitToSid?: number;
             Text1?: string;
             Text10?: string;
@@ -769,6 +829,7 @@ export namespace ServiceRequestServiceTypes {
             Text9?: string;
             TileNo?: string;
             WONeeded?: boolean;
+            WorkOrderIds?: string[];
         }
     }
     export namespace Responses {
@@ -779,27 +840,37 @@ export namespace ServiceRequestServiceTypes {
         export interface ByIncidentAndEmail extends ServiceTypes.CoreResponseBase_<CoreTypes.RequestBase> {}
         export interface ByOtherSystemId extends ServiceTypes.CoreResponseBase_<CoreTypes.RequestBase> {}
         export interface Cancel extends ServiceTypes.CoreResponseBase_<CoreTypes.RequestBase[]> {}
+        export interface ChangeCustomFieldCategory extends ServiceTypes.CoreResponseBase_<CoreTypes.RequestBase[]> {}
         export interface Close extends ServiceTypes.CoreResponseBase_<CoreTypes.RequestBase[]> {}
+        export interface Combine extends ServiceTypes.CoreResponseBase_<CoreTypes.RequestBase[]> {}
         export interface Comments extends ServiceTypes.CoreResponseBase_<string> {}
         export interface CommentsByRequestIds extends ServiceTypes.CoreResponseBase_<{[key: number]: string}> {}
         export interface Create extends ServiceTypes.CoreResponseBase_<CoreTypes.RequestBase> {}
         export interface CreateSearchDefinition extends ServiceTypes.CoreResponseBase_<CoreTypes.SearchDefinition> {}
         export interface CustomFieldCategories extends ServiceTypes.CoreResponseBase_<CoreTypes.CustFieldCategoryBase[]> {}
         export interface CustomFields extends ServiceTypes.CoreResponseBase_<{[key: number]: CoreTypes.ReqCustField[]}> {}
+        export interface DefaultStatus extends ServiceTypes.CoreResponseBase_<{[key: number]: CoreTypes.CodeDesc}> {}
+        export interface DispatchTo extends ServiceTypes.CoreResponseBase_<CoreTypes.EmployeeRelate[]> {}
         export interface LinkCases extends ServiceTypes.CoreResponseBase_<number[]> {}
         export interface LinkInspections extends ServiceTypes.CoreResponseBase_<number[]> {}
         export interface LinkWorkOrders extends ServiceTypes.CoreResponseBase_<string[]> {}
+        export interface Move extends ServiceTypes.CoreResponseBase_<CoreTypes.GISPoint> {}
+        export interface Priorities extends ServiceTypes.CoreResponseBase_<{[key: number]: CoreTypes.CodeDesc[]}> {}
         export interface ProblemLeafByOtherSysCodeDescs extends ServiceTypes.CoreResponseBase_<CoreTypes.ProblemLeafBase> {}
         export interface ProblemLeafBySid extends ServiceTypes.CoreResponseBase_<CoreTypes.ProblemLeafBase> {}
         export interface ProblemNodes extends ServiceTypes.CoreResponseBase_<CoreTypes.ProblemNode[]> {}
         export interface Problems extends ServiceTypes.CoreResponseBase_<CoreTypes.ProblemName[]> {}
+        export interface ProblemsByKeywords extends ServiceTypes.CoreResponseBase_<CoreTypes.ProblemName[]> {}
         export interface QA extends ServiceTypes.CoreResponseBase_<CoreTypes.ProblemQA> {}
+        export interface Reopen extends ServiceTypes.CoreResponseBase_<CoreTypes.RequestBase[]> {}
         export interface RequestInspections extends ServiceTypes.CoreResponseBase_<CoreTypes.RequestInspection[]> {}
         export interface RequestWorkOrders extends ServiceTypes.CoreResponseBase_<CoreTypes.RequestWorkOrder[]> {}
         export interface Search extends ServiceTypes.CoreResponseBase_<number[]> {}
         export interface SearchObject extends ServiceTypes.CoreResponseBase_<CoreTypes.RequestBase[]> {}
         export interface Statuses extends ServiceTypes.CoreResponseBase_<CoreTypes.CodeDesc[]> {}
+        export interface SubmitTo extends ServiceTypes.CoreResponseBase_<CoreTypes.EmployeeRelate[]> {}
         export interface TemplateCustomFields extends ServiceTypes.CoreResponseBase_<CoreTypes.CategoryCustField[]> {}
+        export interface Uncancel extends ServiceTypes.CoreResponseBase_<CoreTypes.RequestBase[]> {}
         export interface UnlinkInspections extends ServiceTypes.CoreResponseBase_<number[]> {}
         export interface UnlinkWorkOrders extends ServiceTypes.CoreResponseBase_<string[]> {}
         export interface Update extends ServiceTypes.CoreResponseBase_<CoreTypes.RequestBase> {}
@@ -812,27 +883,37 @@ export namespace ServiceRequestServiceTypes {
         ByIncidentAndEmail?: (request: Requests.ByIncidentAndEmail) => AbortablePromise<Responses.ByIncidentAndEmail>;
         ByOtherSystemId?: (request: Requests.ByOtherSystemId) => AbortablePromise<Responses.ByOtherSystemId>;
         Cancel?: (request: Requests.Cancel) => AbortablePromise<Responses.Cancel>;
+        ChangeCustomFieldCategory?: (request: Requests.ChangeCustomFieldCategory) => AbortablePromise<Responses.ChangeCustomFieldCategory>;
         Close?: (request: Requests.Close) => AbortablePromise<Responses.Close>;
+        Combine?: (request: Requests.Combine) => AbortablePromise<Responses.Combine>;
         Comments?: (request: Requests.Comments) => AbortablePromise<Responses.Comments>;
         CommentsByRequestIds?: (request: Requests.CommentsByRequestIds) => AbortablePromise<Responses.CommentsByRequestIds>;
         Create?: (request: Requests.Create) => AbortablePromise<Responses.Create>;
         CreateSearchDefinition?: (request: Requests.CreateSearchDefinition) => AbortablePromise<Responses.CreateSearchDefinition>;
         CustomFieldCategories?: (request: Requests.CustomFieldCategories) => AbortablePromise<Responses.CustomFieldCategories>;
         CustomFields?: (request: Requests.CustomFields) => AbortablePromise<Responses.CustomFields>;
+        DefaultStatus?: (request: Requests.DefaultStatus) => AbortablePromise<Responses.DefaultStatus>;
+        DispatchTo?: (request: Requests.DispatchTo) => AbortablePromise<Responses.DispatchTo>;
         LinkCases?: (request: Requests.LinkCases) => AbortablePromise<Responses.LinkCases>;
         LinkInspections?: (request: Requests.LinkInspections) => AbortablePromise<Responses.LinkInspections>;
         LinkWorkOrders?: (request: Requests.LinkWorkOrders) => AbortablePromise<Responses.LinkWorkOrders>;
+        Move?: (request: Requests.Move) => AbortablePromise<Responses.Move>;
+        Priorities?: (request: Requests.Priorities) => AbortablePromise<Responses.Priorities>;
         ProblemLeafByOtherSysCodeDescs?: (request: Requests.ProblemLeafByOtherSysCodeDescs) => AbortablePromise<Responses.ProblemLeafByOtherSysCodeDescs>;
         ProblemLeafBySid?: (request: Requests.ProblemLeafBySid) => AbortablePromise<Responses.ProblemLeafBySid>;
         ProblemNodes?: (request: Requests.ProblemNodes) => AbortablePromise<Responses.ProblemNodes>;
         Problems?: (request: Requests.Problems) => AbortablePromise<Responses.Problems>;
+        ProblemsByKeywords?: (request: Requests.ProblemsByKeywords) => AbortablePromise<Responses.ProblemsByKeywords>;
         QA?: (request: Requests.QA) => AbortablePromise<Responses.QA>;
+        Reopen?: (request: Requests.Reopen) => AbortablePromise<Responses.Reopen>;
         RequestInspections?: (request: Requests.RequestInspections) => AbortablePromise<Responses.RequestInspections>;
         RequestWorkOrders?: (request: Requests.RequestWorkOrders) => AbortablePromise<Responses.RequestWorkOrders>;
         Search?: (request: Requests.Search) => AbortablePromise<Responses.Search>;
         SearchObject?: (request: Requests.SearchObject) => AbortablePromise<Responses.SearchObject>;
         Statuses?: (request: Requests.Statuses) => AbortablePromise<Responses.Statuses>;
+        SubmitTo?: (request: Requests.SubmitTo) => AbortablePromise<Responses.SubmitTo>;
         TemplateCustomFields?: (request: Requests.TemplateCustomFields) => AbortablePromise<Responses.TemplateCustomFields>;
+        Uncancel?: (request: Requests.Uncancel) => AbortablePromise<Responses.Uncancel>;
         UnlinkInspections?: (request: Requests.UnlinkInspections) => AbortablePromise<Responses.UnlinkInspections>;
         UnlinkWorkOrders?: (request: Requests.UnlinkWorkOrders) => AbortablePromise<Responses.UnlinkWorkOrders>;
         Update?: (request: Requests.Update) => AbortablePromise<Responses.Update>;

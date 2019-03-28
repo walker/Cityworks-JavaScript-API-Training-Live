@@ -14,6 +14,9 @@ export declare class CodesService implements ICodesService {
     AllCCTVCodeDescScore(request: Requests.AllCCTVCodeDescScore): AbortablePromise<Responses.AllCCTVCodeDescScore>;
     AllDescScore(request: Requests.AllDescScore): AbortablePromise<Responses.AllDescScore>;
     ByCodeType(request: Requests.ByCodeType): AbortablePromise<Responses.ByCodeType>;
+    Export(request: Requests.Export): AbortablePromise<Responses.Export>;
+    ExportCCTVCodeDescScore(request: Requests.ExportCCTVCodeDescScore): AbortablePromise<Responses.Export>;
+    ExportDescScore(request: Requests.ExportDescScore): AbortablePromise<Responses.Export>;
     Import(request: Requests.Import): AbortablePromise<Responses.Import>;
     ImportCCTVCodeDescScore(request: Requests.ImportCCTVCodeDescScore): AbortablePromise<Responses.ImportCCTVCodeDescScore>;
     ImportDescScore(request: Requests.ImportDescScore): AbortablePromise<Responses.ImportDescScore>;

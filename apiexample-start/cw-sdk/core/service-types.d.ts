@@ -7,6 +7,7 @@ export declare namespace ServiceTypes {
         Offset?: number;
         SortDir?: number;
         SortField?: string;
+        WhereClause?: ServiceTypes.FilterCondition[];
     }
     interface CoreRequestVerified extends ServiceTypes.CoreRequestBase {
         WebServiceRequestId?: string;
@@ -44,17 +45,12 @@ export declare namespace ServiceTypes {
         Offset?: number;
         Total?: number;
     }
-    interface CoreResponsePaged_obsolete_<T> extends ServiceTypes.CoreResponseBase_obsolete_<T> {
-        Limit?: number;
-        Offset?: number;
-        Total?: number;
-    }
     interface CoreResponseSuccessMessage extends ServiceTypes.CoreResponseMessage {
     }
-    interface CoreResponseVerified extends ServiceTypes.CoreResponseBase {
+    interface CoreResponseVerified_<T> extends ServiceTypes.CoreResponseBase_<T> {
         WebServiceRequestId?: string;
     }
-    interface CoreResponseVerified_<T> extends ServiceTypes.CoreResponseBase_<T> {
+    interface CoreResponseVerified extends ServiceTypes.CoreResponseBase {
         WebServiceRequestId?: string;
     }
     interface CoreResponseVerified_obsolete extends ServiceTypes.CoreResponseBase_obsolete {
@@ -64,5 +60,10 @@ export declare namespace ServiceTypes {
         WebServiceRequestId?: string;
     }
     interface CoreResponseWarningMessage extends ServiceTypes.CoreResponseMessage {
+    }
+    interface FilterCondition {
+        FilterColumn?: string;
+        FilterOperator?: string;
+        FilterValue?: string;
     }
 }

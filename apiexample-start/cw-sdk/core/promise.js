@@ -13,14 +13,14 @@ define(["require", "exports"], function (require, exports) {
     Object.defineProperty(exports, "__esModule", { value: true });
     var PromiseTypes;
     (function (PromiseTypes) {
-        var AbortablePromise = (function (_super) {
+        var AbortablePromise = /** @class */ (function (_super) {
             __extends(AbortablePromise, _super);
             function AbortablePromise(executor) {
                 return _super.call(this, executor) || this;
             }
+            AbortablePromise.REASON_ABORTED = 'ABORTED';
             return AbortablePromise;
         }(Promise));
-        AbortablePromise.REASON_ABORTED = 'ABORTED';
         PromiseTypes.AbortablePromise = AbortablePromise;
     })(PromiseTypes = exports.PromiseTypes || (exports.PromiseTypes = {}));
 });

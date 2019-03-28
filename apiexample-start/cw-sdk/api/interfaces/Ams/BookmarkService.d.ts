@@ -4,7 +4,7 @@ import AbortablePromise = PromiseTypes.AbortablePromise;
 export namespace BookmarkServiceTypes { 
     export namespace Requests {
         export interface AddBookmark extends ServiceTypes.CoreRequestBase {
-            ExtentName?: string;
+            ExtentName: string;
             IsDefault?: boolean;
             SharedWithin?: number;
             XMax?: number;
@@ -26,6 +26,7 @@ export namespace BookmarkServiceTypes {
             DomainId?: number;
             EmployeeSid?: number;
             GroupId?: number;
+            IncludeShared?: boolean;
             WKID?: number;
             WKT?: string;
         }
@@ -33,6 +34,7 @@ export namespace BookmarkServiceTypes {
             DomainId?: number;
             EmployeeSid?: number;
             GroupId?: number;
+            IncludeShared?: boolean;
         }
         export interface SetInitialExtent extends ServiceTypes.CoreRequestBase {
             ExtentName?: string;

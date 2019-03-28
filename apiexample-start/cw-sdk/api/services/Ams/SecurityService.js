@@ -5,10 +5,16 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     }
     Object.defineProperty(exports, "__esModule", { value: true });
     __export(api_service_1);
-    var SecurityService = (function () {
+    var SecurityService = /** @class */ (function () {
         function SecurityService(service) {
             this._service = service;
         }
+        SecurityService.prototype.Contract = function (request) {
+            return this._service.call(request, 'Ams/Security/Contract');
+        };
+        SecurityService.prototype.Contracts = function (request) {
+            return this._service.call(request, 'Ams/Security/Contracts');
+        };
         SecurityService.prototype.Inspection = function (request) {
             return this._service.call(request, 'Ams/Security/Inspection');
         };

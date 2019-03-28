@@ -16,7 +16,9 @@ export declare class WorkOrderService implements IWorkOrderService {
     ByIds(request: Requests.ByIds): AbortablePromise<Responses.ByIds>;
     Cancel(request: Requests.Cancel): AbortablePromise<Responses.Cancel>;
     Categories(request: Requests.Categories): AbortablePromise<Responses.Categories>;
+    ChangeCustomFieldCategory(request: Requests.ChangeCustomFieldCategory): AbortablePromise<Responses.ChangeCustomFieldCategory>;
     Close(request: Requests.Close): AbortablePromise<Responses.Close>;
+    Combine(request: Requests.Combine): AbortablePromise<Responses.Combine>;
     Comments(request: Requests.Comments): AbortablePromise<Responses.Comments>;
     CommentsByWorkOrderIds(request: Requests.CommentsByWorkOrderIds): AbortablePromise<Responses.CommentsByWorkOrderIds>;
     Create(request: Requests.Create): AbortablePromise<Responses.Create>;
@@ -36,6 +38,7 @@ export declare class WorkOrderService implements IWorkOrderService {
     Move(request: Requests.Move): AbortablePromise<Responses.Move>;
     Priorities(request: Requests.Priorities): AbortablePromise<Responses.Priorities>;
     RemoveEntities(request: Requests.RemoveEntities): AbortablePromise<Responses.RemoveEntities>;
+    ReOpen(request: Requests.ReOpen): AbortablePromise<Responses.ReOpen>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
     SearchObject(request: Requests.SearchObject): AbortablePromise<Responses.SearchObject>;
     Stages(request: Requests.Stages): AbortablePromise<Responses.Stages>;
@@ -45,6 +48,7 @@ export declare class WorkOrderService implements IWorkOrderService {
     Template(request: Requests.Template): AbortablePromise<Responses.Template>;
     TemplateCustomFields(request: Requests.TemplateCustomFields): AbortablePromise<Responses.TemplateCustomFields>;
     Templates(request: Requests.Templates): AbortablePromise<Responses.Templates>;
+    Uncancel(request: Requests.Uncancel): AbortablePromise<Responses.Uncancel>;
     UnlinkInspections(request: Requests.UnlinkInspections): AbortablePromise<Responses.UnlinkInspections>;
     UnlinkServiceRequests(request: Requests.UnlinkServiceRequests): AbortablePromise<Responses.UnlinkServiceRequests>;
     Update(request: Requests.Update): AbortablePromise<Responses.Update>;

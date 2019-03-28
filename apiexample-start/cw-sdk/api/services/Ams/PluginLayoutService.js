@@ -5,12 +5,21 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     }
     Object.defineProperty(exports, "__esModule", { value: true });
     __export(api_service_1);
-    var PluginLayoutService = (function () {
+    var PluginLayoutService = /** @class */ (function () {
         function PluginLayoutService(service) {
             this._service = service;
         }
+        PluginLayoutService.prototype.Definition = function (request) {
+            return this._service.call(request, 'Ams/PluginLayout/Definition');
+        };
         PluginLayoutService.prototype.Definitions = function (request) {
             return this._service.call(request, 'Ams/PluginLayout/Definitions');
+        };
+        PluginLayoutService.prototype.Public = function (request) {
+            return this._service.call(request, 'Ams/PluginLayout/Public');
+        };
+        PluginLayoutService.prototype.PublicDefinitions = function (request) {
+            return this._service.call(request, 'Ams/PluginLayout/PublicDefinitions');
         };
         return PluginLayoutService;
     }());
